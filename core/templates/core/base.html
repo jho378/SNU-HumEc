@@ -1,0 +1,71 @@
+{% load sass_tags %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+    <script src="https://kit.fontawesome.com/5658349e28.js" crossorigin="anonymous"></script>
+    <link href="{% sass_src 'css/base.scss' %}" rel="stylesheet"/>
+
+    {% block extra-head %}
+    {% endblock %}
+</head>
+<body>
+<header>
+    <div class="header-logo">
+        <img src="" alt="">
+    </div>
+    <div class="header-list">
+        <div class="header-list-item">학생회</div>
+        <div class="header-list-item">과별 게시판</div>
+        <div class="header-list-item">공지사항</div>
+        <div class="header-list-item">민원/건의사항</div>
+        <div class="header-list-item">커뮤니티</div>
+    </div>
+    <div class="header-user">
+        <i class="fas fa-search"></i>
+        <div class="header-user-item">로그인</div>
+        <div class="header-user-item">회원가입</div>
+    </div>
+</header>
+
+{% block content %}
+{% endblock %}
+
+<footer>
+    <div class="footer-contents-wrap">
+        <div class="footer-contents">
+            <div class="footer-contents-title">학생회</div>
+            <div class="footer-contents-item">학생회 소개</div>
+            <div class="footer-contents-item">회식 / 세칙</div>
+            <div class="footer-contents-item">생운위 / 전학대회</div>
+            <div class="footer-contents-item">집행부 회의록</div>
+        </div>
+        <div class="footer-contents">
+            <div class="footer-contents-title">과별 게시판</div>
+            <div class="footer-contents-item">소비자학과</div>
+            <div class="footer-contents-item">아동가족학과</div>
+            <div class="footer-contents-item">식품영양학과</div>
+            <div class="footer-contents-item">의류학과</div>
+        </div>
+        <div class="footer-contents">
+            <div class="footer-contents-title">공지사항</div>
+        </div>
+        <div class="footer-contents">
+            <div class="footer-contents-title">민원/건의함</div>
+        </div>
+        <div class="footer-contents">
+            <div class="footer-contents-title">커뮤니티</div>
+            <div class="footer-contents-item">장터게시판</div>
+            <div class="footer-contents-item">홍보게시판</div>
+            <div class="footer-contents-item">자유게시판</div>
+            <div class="footer-contents-item">스터디/강의 게시판</div>
+        </div>
+    </div>
+    <div class="footer-belt">
+        서울대학교 생활과학대학 학생회 | 서울특별시 관악구 관악로1 서울대학교 222동 B112호 | snuhumec2021@gmail.com
+    </div>
+</footer>
+
+</body>
+</html>

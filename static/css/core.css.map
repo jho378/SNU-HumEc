@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "core.css",
+	"sources": [
+		"core.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,iBAAiB,CAAC;EAChB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa,GAC/B"
+}

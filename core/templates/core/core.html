@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block extra-head %}
+    <link rel="stylesheet" href="{% static 'css/core.scss' %}">
+{% endblock %}
+
+{% block content %}
+<div id="core-banner">
+    <div><img src="" alt=""></div>
+</div>
+<div class="core-content-box">
+    <div id="core-notice" class="core-list">
+        <div class="core-list-header">
+            <div class="core-list-title">공지사항</div>
+            <div class="core-list-plus">더보기</div>
+        </div>
+    </div>
+    <div id="core-major">
+        <div class="core-major-item">소비자학과</div>
+        <div class="core-major-item">아동가족학과</div>
+        <div class="core-major-item">식품영양학과</div>
+        <div class="core-major-item">의류학과</div>
+        <div class="core-major-suggest">건의하기</div>
+    </div>
+</div>
+<div class="core-content-box">
+    <div id="core-event" class="core-list">
+        <div class="core-list-header">
+            <div class="core-list-title">이달의 행사</div>
+            <div class="core-list-plus">더보기</div>
+        </div>
+    </div>
+    <div id="core-market" class="core-list">
+        <div class="core-list-header">
+            <div class="core-list-title">장터 게시판</div>
+            <div class="core-list-plus">더보기</div>
+        </div>
+    </div>
+</div>
+{% endblock %}
