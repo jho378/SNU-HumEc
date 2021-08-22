@@ -1,9 +1,6 @@
 @import "init";
 
 $font-size-base: 22px;
-$font-bold: "YeolrinGothic-Bold";
-$font-medium: "YeolrinGothic-Medium";
-$font-light: "YeolrinGothic-Light";
 
 header {
   @include flex-box;

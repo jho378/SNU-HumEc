@@ -1,26 +1,32 @@
 {% extends 'core/base.html' %}
-{% load static %}
+{% load sass_tags %}
 
 {% block extra-head %}
-    <link rel="stylesheet" href="{% static 'css/core.scss' %}">
+<link rel="stylesheet" href="{% sass_src 'css/core.scss' %}"/>
 {% endblock %}
 
 {% block content %}
 <div id="core-banner">
-    <div><img src="" alt=""></div>
+    <img src="" alt="">
 </div>
 <div class="core-content-box">
     <div id="core-notice" class="core-list">
         <div class="core-list-header">
             <div class="core-list-title">공지사항</div>
-            <div class="core-list-plus">더보기</div>
+            <div class="core-list-plus">더보기<span>▶</span></div>
         </div>
+        <!--데이터 받아서 for 문-->
+        <div class="core-list-item">
+            <div class="title">첫 번째 제목</div>
+            <div class="summary">2021-08-04<span>작성자</span></div>
+        </div>
+        <!--for 문 끝-->
     </div>
     <div id="core-major">
-        <div class="core-major-item">소비자학과</div>
-        <div class="core-major-item">아동가족학과</div>
-        <div class="core-major-item">식품영양학과</div>
-        <div class="core-major-item">의류학과</div>
+        <div id="core-major-consumer" class="core-major-item">소비자학과</div>
+        <div id="core-major-child" class="core-major-item">아동가족학과</div>
+        <div id="core-major-food" class="core-major-item">식품영양학과</div>
+        <div id="core-major-clothing" class="core-major-item">의류학과</div>
         <div class="core-major-suggest">건의하기</div>
     </div>
 </div>
@@ -28,14 +34,26 @@
     <div id="core-event" class="core-list">
         <div class="core-list-header">
             <div class="core-list-title">이달의 행사</div>
-            <div class="core-list-plus">더보기</div>
+            <div class="core-list-plus">더보기<span>▶</span></div>
         </div>
+        <!--데이터 받아서 for 문-->
+        <div class="core-list-item">
+            <div class="title">첫 번째 제목</div>
+            <div class="summary">08-04 ~ 08-05</div>
+        </div>
+        <!--for 문 끝-->
     </div>
     <div id="core-market" class="core-list">
         <div class="core-list-header">
             <div class="core-list-title">장터 게시판</div>
-            <div class="core-list-plus">더보기</div>
+            <div class="core-list-plus">더보기<span>▶</span></div>
         </div>
+        <!--데이터 받아서 for 문-->
+        <div class="core-list-item">
+            <div class="title"><span>구매</span>첫 번째 제목</div>
+            <div class="summary">2021-08-04<span>작성자</span></div>
+        </div>
+        <!--for 문 끝-->
     </div>
 </div>
 {% endblock %}

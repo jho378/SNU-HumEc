@@ -1,6 +1,120 @@
 @import "init";
 
+$core-line: 3px solid #1D333E;
+$font-size-core: 22px;
+$width-core-list: 540px; // 전체화면 1920px 기준 760px, 넘쳐서 임시로 수정
+$margin-bottom-core-list: 139px;
+
+#core-banner {
+  width: 100%;
+  height: 547px;
+  background: transparent linear-gradient(180deg, #5C90D0 0%, #81B5E7 100%) 0 0 no-repeat padding-box;
+  margin-bottom: 87px;
+}
+
 .core-content-box {
-  display: flex;
-  justify-content: space-between;
+  @include flex-box;
+  align-items: flex-start;
+  padding: 0 142px;
+
+  .core-list {
+    width: $width-core-list;
+    border-bottom: $core-line;
+    padding-bottom: 27px;
+    margin-bottom: $margin-bottom-core-list;
+  }
+
+  .core-list-header {
+    @include flex-box;
+    padding-bottom: 8px;
+    margin-bottom: 22px;
+    border-bottom: $core-line;
+
+    .core-list-title {
+      font-family: $font-bold;
+      font-size: 28px;
+    }
+
+    .core-list-plus {
+      font-family: $font-light;
+      font-size: 20px;
+      color: #A6A6A6;
+
+      span {
+        margin-left: 9px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .core-list-item {
+    @include flex-box;
+    font-size: $font-size-core;
+    margin-top: 20px;
+
+    .title {
+      font-family: $font-medium;
+      margin-left: 12px;
+
+      span { // 장터 게시판 tag
+        font-family: $font-light;
+        color: #7B8A78;
+        margin-right: 25px;
+      }
+    }
+
+    .summary {
+      font-family: $font-light;
+      margin-right: 19px;
+
+      span {
+        margin-left: 50px;
+      }
+    }
+  }
+
+  #core-major {
+    @include flex-box;
+    flex-wrap: wrap;
+    width: $width-core-list;
+    margin-top: 46px;
+    margin-bottom: $margin-bottom-core-list;
+
+    font-family: $font-bold;
+    font-size: 28px;
+    color: white;
+
+    .core-major-item {
+      $height: 280px;
+      width: $width-core-list / 2;
+      height: $height;
+      text-align: center;
+      line-height: $height;
+    }
+
+    #core-major-consumer {
+      background: #1D333E;
+    }
+
+    #core-major-child {
+      background: #344D51;
+    }
+
+    #core-major-food {
+      background: #566B64;
+    }
+
+    #core-major-clothing {
+      background: #7B8A78;
+    }
+
+    .core-major-suggest {
+      $height: 145px;
+      width: 100%;
+      height: $height;
+      text-align: center;
+      line-height: $height;
+      background: #CACAA4;
+    }
+  }
 }

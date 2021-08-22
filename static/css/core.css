@@ -1,5 +1,47 @@
-.core-content-box {
-  display: flex;
-  justify-content: space-between; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@font-face { font-family: 'YeolrinGothic-Bold'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Bold.woff") format("woff"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'YeolrinGothic-Medium'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Medium.woff") format("woff"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'YeolrinGothic-Light'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Light.woff") format("woff"); font-weight: normal; font-style: normal; }
+
+#core-banner { width: 100%; height: 547px; background: transparent linear-gradient(180deg, #5C90D0 0%, #81B5E7 100%) 0 0 no-repeat padding-box; margin-bottom: 87px; }
+
+.core-content-box { display: flex; justify-content: space-between; align-items: center; align-items: flex-start; padding: 0 142px; }
+
+.core-content-box .core-list { width: 540px; border-bottom: 3px solid #1D333E; padding-bottom: 27px; margin-bottom: 139px; }
+
+.core-content-box .core-list-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; margin-bottom: 22px; border-bottom: 3px solid #1D333E; }
+
+.core-content-box .core-list-header .core-list-title { font-family: "YeolrinGothic-Bold"; font-size: 28px; }
+
+.core-content-box .core-list-header .core-list-plus { font-family: "YeolrinGothic-Light"; font-size: 20px; color: #A6A6A6; }
+
+.core-content-box .core-list-header .core-list-plus span { margin-left: 9px; font-size: 16px; }
+
+.core-content-box .core-list-item { display: flex; justify-content: space-between; align-items: center; font-size: 22px; margin-top: 20px; }
+
+.core-content-box .core-list-item .title { font-family: "YeolrinGothic-Medium"; margin-left: 12px; }
+
+.core-content-box .core-list-item .title span { font-family: "YeolrinGothic-Light"; color: #7B8A78; margin-right: 25px; }
+
+.core-content-box .core-list-item .summary { font-family: "YeolrinGothic-Light"; margin-right: 19px; }
+
+.core-content-box .core-list-item .summary span { margin-left: 50px; }
+
+.core-content-box #core-major { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; width: 540px; margin-top: 46px; margin-bottom: 139px; font-family: "YeolrinGothic-Bold"; font-size: 28px; color: white; }
+
+.core-content-box #core-major .core-major-item { width: 270px; height: 280px; text-align: center; line-height: 280px; }
+
+.core-content-box #core-major #core-major-consumer { background: #1D333E; }
+
+.core-content-box #core-major #core-major-child { background: #344D51; }
+
+.core-content-box #core-major #core-major-food { background: #566B64; }
+
+.core-content-box #core-major #core-major-clothing { background: #7B8A78; }
+
+.core-content-box #core-major .core-major-suggest { width: 100%; height: 145px; text-align: center; line-height: 145px; background: #CACAA4; }
 
 /*# sourceMappingURL=core.css.map */
