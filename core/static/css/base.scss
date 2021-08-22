@@ -4,15 +4,99 @@
   box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'YeolrinGothic-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YeolrinGothic-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YeolrinGothic-Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @mixin flex-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+$font-size-base: 22px;
+$font-bold: "YeolrinGothic-Bold";
+$font-medium: "YeolrinGothic-Medium";
+$font-light: "YeolrinGothic-Light";
+
 header {
   @include flex-box;
-  width: 100%;
-  height: 100px;
+  height: 99px;
   padding: 0 50px;
+  box-shadow: 0 10px 10px #00000029;
+  white-space: nowrap;
+
+  .header-list {
+    @include flex-box;
+    font-size: $font-size-base;
+    font-family: $font-medium;
+
+    .header-list-item {
+      margin: 0 35px;
+    }
+
+    .header-user-item {
+      margin-left: 47px;
+    }
+  }
+}
+
+footer {
+  .footer-contents-wrap {
+    @include flex-box;
+    align-items: flex-start;
+    width: 100%;
+    height: 508px;
+    padding: 90px 167px;
+    background: #E9E9D0;
+
+    .footer-contents {
+      text-align: center;
+    }
+
+    .footer-contents-title {
+      font-size: 28px;
+      font-family: $font-bold;
+      margin-bottom: 74px;
+    }
+
+    .footer-contents-item {
+      font-size: $font-size-base;
+      font-family: $font-medium;
+      margin-bottom: 31px;
+    }
+  }
+
+  .footer-belt {
+    $height: 55px;
+    height: $height;
+    text-align: center;
+    line-height: $height;
+
+    font-size: 18px;
+    font-family: $font-light;
+    color: #E9E9D0;
+    background: #566B64;
+
+    span {
+      margin: 0 22px;
+    }
+  }
 }
