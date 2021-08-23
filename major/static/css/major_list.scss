@@ -1,0 +1,23 @@
+@import "../../../common/static/init";
+
+.major-post {
+  @include flex-box;
+  width: 900px;
+  margin-bottom: 11px;
+  border-bottom: 2px solid #BABABA;
+  font-size: 25px;
+  text-align: center;
+}
+
+.major-post-title {
+  width: 50%;
+}
+
+.major-post-date {
+  width: 25%;
+}
+
+.major-post-user {
+  width: 25%;
+}
+
