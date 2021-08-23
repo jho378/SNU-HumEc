@@ -1,4 +1,4 @@
-@import "init";
+@import "../../../common/static/init";  // 상대경로로 작성
 
 $font-size-base: 22px;
 
@@ -65,4 +65,18 @@ footer {
       margin: 0 22px;
     }
   }
+}
+
+// 세부 페이지 상단 제목 배너: 앱 별로 동일하기에 base.scss에 작성
+.title-banner {
+  $height: 150px;
+  height: $height;
+  margin-top: 50px;
+  padding-left: 79px;
+  line-height: $height;
+  background: #1D333E;
+
+  font-family: $font-bold;
+  font-size: 28px;
+  color: white;
 }

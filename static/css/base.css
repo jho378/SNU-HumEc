@@ -26,4 +26,6 @@ footer .footer-belt { height: 55px; text-align: center; line-height: 55px; font-
 
 footer .footer-belt span { margin: 0 22px; }
 
+.title-banner { height: 150px; margin-top: 50px; padding-left: 79px; line-height: 150px; background: #1D333E; font-family: "YeolrinGothic-Bold"; font-size: 28px; color: white; }
+
 /*# sourceMappingURL=base.css.map */

@@ -1,2 +1,29 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@font-face { font-family: 'YeolrinGothic-Bold'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Bold.woff") format("woff"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'YeolrinGothic-Medium'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Medium.woff") format("woff"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'YeolrinGothic-Light'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Light.woff") format("woff"); font-weight: normal; font-style: normal; }
+
+.major-wrap { display: flex; justify-content: space-between; align-items: center; align-items: flex-start; margin-top: 110px; padding: 0 185px 0 79px; }
+
+.major-menu-item { margin-bottom: 24px; font-family: "YeolrinGothic-Medium"; font-size: 23px; }
+
+.major-contents-wrap { width: 900px; }
+
+.major-contents-wrap .major-name { padding-bottom: 23px; border-bottom: 19px solid #566B64; font-family: "YeolrinGothic-Medium"; font-size: 55px; }
+
+.major-contents-wrap .major-contents { margin-top: 157px; }
+
+.major-contents-wrap .major-contents .major-contents-col { display: flex; justify-content: space-between; align-items: center; padding-bottom: 5px; margin-bottom: 11px; border-bottom: 6px solid #344D51; }
+
+.major-contents-wrap .major-contents .major-contents-col .col { font-family: "YeolrinGothic-Bold"; font-size: 36px; text-align: center; }
+
+.major-contents-wrap .major-contents .major-contents-col .col-title { width: 50%; }
+
+.major-contents-wrap .major-contents .major-contents-col .col-date { width: 25%; }
+
+.major-contents-wrap .major-contents .major-contents-col .col-user { width: 25%; }
 
 /*# sourceMappingURL=major_base.css.map */

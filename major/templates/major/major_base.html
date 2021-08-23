@@ -7,23 +7,31 @@
 {% endblock %}
 
 {% block content %}
-<div id="major-banner">과별 게시판</div>
+<!--base.scss에 style-->
+<div class="title-banner">과별 게시판</div>
 
-<div class="major-menu">
-    <div class="major-menu-item">식품영양학과</div>
-    <div class="major-menu-item">의류학과</div>
-    <div class="major-menu-item">소비자학과</div>
-    <div class="major-menu-item">아동가족학과</div>
-</div>
-
-<div class="major-contents-wrap">
-    <div class="major-name">
-        {% block major-name %}
-        {% endblock %}
+<div class="major-wrap">
+    <div class="major-menu">
+        <div class="major-menu-item">식품영양학과</div>
+        <div class="major-menu-item">의류학과</div>
+        <div class="major-menu-item">소비자학과</div>
+        <div class="major-menu-item">아동가족학과</div>
     </div>
-    <div class="major-contents">
-        {% block major-content %}
-        {% endblock %}
+
+    <div class="major-contents-wrap">
+        <div class="major-name">
+            {% block major-name %}
+            {% endblock %}
+        </div>
+        <div class="major-contents">
+            <div class="major-contents-col">
+                <div class="col col-title">제목</div>
+                <div class="col col-date">게시일</div>
+                <div class="col col-user">작성자</div>
+            </div>
+            {% block major-content %}
+            {% endblock %}
+        </div>
     </div>
 </div>
 {% endblock %}

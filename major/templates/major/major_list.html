@@ -3,7 +3,7 @@
 
 <!--학과명-->
 {% block major-name %}
-{{ posts.major }}
+{{ major }}
 {% endblock %}
 
 <!--글 목록-->
@@ -11,8 +11,10 @@
 {% for post in posts %}
 <div class="major-post">
     <div class="major-post-title">{{ post.title }}</div>
-    <div class="major-post-date">{{ post.created_at }}</div>
-    <div class="major-post-user">{{ post.user }}</div>
+    <div class="major-post-date">
+        {{ post.created_at }}
+        <span class="major-post-user">{{ post.user }}</span>
+    </div>
 </div>
 {% endfor %}
 {% endblock %}
