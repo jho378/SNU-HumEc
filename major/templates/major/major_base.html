@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+{% load sass_tags %}
+
+{% block extra-head %}
+<link rel="stylesheet" href="{% sass_src 'css/major_base.scss' %}"/>
+<link rel="stylesheet" href="{% sass_src 'css/major_list.scss' %}"/>
+{% endblock %}
+
+{% block content %}
+<div id="major-banner">과별 게시판</div>
+
+<div class="major-menu">
+    <div class="major-menu-item">식품영양학과</div>
+    <div class="major-menu-item">의류학과</div>
+    <div class="major-menu-item">소비자학과</div>
+    <div class="major-menu-item">아동가족학과</div>
+</div>
+
+<div class="major-contents-wrap">
+    <div class="major-name">
+        {% block major-name %}
+        {% endblock %}
+    </div>
+    <div class="major-contents">
+        {% block major-content %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}

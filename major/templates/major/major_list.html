@@ -1,0 +1,18 @@
+{% extends 'major/major_base.html' %}
+{% load sass_tags %}
+
+<!--학과명-->
+{% block major-name %}
+{{ posts.major }}
+{% endblock %}
+
+<!--글 목록-->
+{% block major-content %}
+{% for post in posts %}
+<div class="major-post">
+    <div class="major-post-title">{{ post.title }}</div>
+    <div class="major-post-date">{{ post.created_at }}</div>
+    <div class="major-post-user">{{ post.user }}</div>
+</div>
+{% endfor %}
+{% endblock %}

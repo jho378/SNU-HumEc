@@ -5,6 +5,7 @@ from major.models import MajorPost
 def consumer_list(request):
     queryset = MajorPost.objects.filter(major="consumer")
     ctx = {
-        "posts": queryset
+        "major": "소비자학과",
+        "posts": queryset,
     }
-    return render(request, "major/consumer_list.html", ctx)
+    return render(request, "major/major_list.html", ctx)

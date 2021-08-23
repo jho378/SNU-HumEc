@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "base_major.css",
+	"sources": [
+		"base_major.scss"
+	],
+	"names": [],
+	"mappings": ""
+}
