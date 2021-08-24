@@ -2,9 +2,10 @@
 {% load sass_tags %}
 
 {% block extra-head %}
-<link rel="stylesheet" href="{% sass_src 'css/major_base.scss' %}"/>
-<link rel="stylesheet" href="{% sass_src 'css/major_list.scss' %}?2"/>
-{% endblock%}
+<link rel="stylesheet" href="{% sass_src 'css/major_base.scss' %}?1"/>
+{% block major-extra-head %}
+{% endblock %}
+{% endblock %}
 
 {% block content %}
 <!--base.scss에 style-->
@@ -12,10 +13,18 @@
 
 <div class="major-wrap">
     <div class="major-menu">
-        <div class="major-menu-item">식품영양학과</div>
-        <div class="major-menu-item">의류학과</div>
-        <div class="major-menu-item">소비자학과</div>
-        <div class="major-menu-item">아동가족학과</div>
+        <div class="major-menu-item">
+            <a href="{% url 'major:food_list' %}">식품영양학과</a>
+        </div>
+        <div class="major-menu-item">
+            <a href="{% url 'major:clothing_list' %}">의류학과</a>
+        </div>
+        <div class="major-menu-item">
+            <a href="{% url 'major:consumer_list' %}">소비자학과</a>
+        </div>
+        <div class="major-menu-item">
+            <a href="{% url 'major:child_list' %}">아동가족학과</a>
+        </div>
     </div>
 
     <div class="major-contents-wrap">

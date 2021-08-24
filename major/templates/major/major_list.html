@@ -1,6 +1,10 @@
 {% extends 'major/major_base.html' %}
 {% load sass_tags %}
 
+{% block major-extra-head %}
+<link rel="stylesheet" href="{% sass_src 'css/major_list.scss' %}?3"/>
+{% endblock %}
+
 <!--학과명-->
 {% block major-name %}
 {{ major }}
@@ -10,7 +14,9 @@
 {% block major-content %}
 {% for post in posts %}
 <div class="major-post">
-    <div class="major-post-title">{{ post.title }}</div>
+    <div class="major-post-title">
+        <a href="{% url 'major:major_detail' post.pk %}">{{ post.title }}</a>
+    </div>
     <div class="major-post-date">{{ post.created_at|date:"Y-m-d" }}</div>
     <div class="major-post-user">{{ post.user }}</div>
 </div>

@@ -1,0 +1,27 @@
+{% extends 'major/major_base.html' %}
+{% load sass_tags %}
+
+{% block major-extra-head %}
+<link rel="stylesheet" href="{% sass_src 'css/major_detail.scss' %}?2"/>
+{% endblock %}
+
+{% block major-name %}
+{{ major }}
+{% endblock %}
+
+{% block major-content %}
+<!--해당 페이지 접근 시 조회수 업데이트-->
+<div style="display: none">{{ post.click }}</div>
+
+<div class="major-detail-title">{{ post.title }}</div>
+<div class="major-detail-summary">
+    <div class="major-detail-summary-unit">{{ post.user }}</div>
+    <div class="major-detail-summary-unit">{{ post.created_at|date:"Y-m-d" }}</div>
+    <div class="major-detail-summary-unit">{{ post.hits }}</div>
+</div>
+<div class="major-detail-contents">{{ post.contents }}</div>
+<div class="major-detail-button-wrap">
+    <a href=""><div class="major-detail-button">수정</div></a>
+    <a href=""><div class="major-detail-button">삭제</div></a>
+</div>
+{% endblock %}
