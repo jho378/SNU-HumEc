@@ -1,2 +1,17 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+a { text-decoration: none; color: inherit; }
+
+@font-face { font-family: 'YeolrinGothic-Bold'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Bold.woff") format("woff"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'YeolrinGothic-Medium'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Medium.woff") format("woff"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'YeolrinGothic-Light'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Light.woff") format("woff"); font-weight: normal; font-style: normal; }
+
+.major-detail-title { margin: 30px 40px; font-family: "YeolrinGothic-Light"; font-size: 30px; }
+
+.major-detail-summary { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+
+.major-detail-summary .major-detail-summary-unit { width: 32%; height: 54px; text-align: center; line-height: 54px; font-family: "YeolrinGothic-Light"; font-size: 22px; color: white; background: #7B8A78; }
 
 /*# sourceMappingURL=major_detail.css.map */

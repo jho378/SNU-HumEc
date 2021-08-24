@@ -1,5 +1,28 @@
 @import "../../../common/static/init";
 
+.major-contents-col {
+  @include flex-box;
+  padding-bottom: 5px;
+  margin: 157px 0 11px;
+  border-bottom: 6px solid #344D51;
+
+  .col {
+    font-family: $font-bold;
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .col-title {
+    width: 50%; // 임의로 설정
+  }
+  .col-date {
+    width: 25%;
+  }
+  .col-user {
+    width: 25%;
+  }
+}
+
 .major-post {
   @include flex-box;
   width: 900px;
@@ -8,17 +31,15 @@
   border-bottom: 2px solid #BABABA;
   font-size: 25px;
   text-align: center;
-}
 
-.major-post-title {
-  width: 50%;
-}
-
-.major-post-date {
-  width: 25%;
-}
-
-.major-post-user {
-  width: 25%;
+  .major-post-title {
+    width: 50%;
+  }
+  .major-post-date {
+    width: 25%;
+  }
+  .major-post-user {
+    width: 25%;
+  }
 }
 

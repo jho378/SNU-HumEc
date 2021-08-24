@@ -22,31 +22,5 @@
     font-family: $font-medium;
     font-size: 55px;
   }
-
-  .major-contents {
-    margin-top: 157px;
-
-    .major-contents-col {
-      @include flex-box;
-      padding-bottom: 5px;
-      margin-bottom: 11px;
-      border-bottom: 6px solid #344D51;
-
-      .col {
-        font-family: $font-bold;
-        font-size: 36px;
-        text-align: center;
-      }
-      .col-title {
-        width: 50%; // 임의로 설정
-      }
-      .col-date {
-        width: 25%;
-      }
-      .col-user {
-        width: 25%;
-      }
-    }
-  }
 }
 

@@ -1,0 +1,26 @@
+@import "../../../common/static/init";
+
+.major-detail-title {
+  margin: 30px 40px;
+  font-family: $font-light;
+  font-size: 30px;
+}
+
+.major-detail-summary {
+  @include flex-box;
+  width: 100%;
+
+  .major-detail-summary-unit {
+    $height: 54px;
+    width: 32%;
+    height: $height;
+    text-align: center;
+    line-height: $height;
+
+    font-family: $font-light;
+    font-size: 22px;
+    color: white;
+    background: #7B8A78;
+  }
+}
+
