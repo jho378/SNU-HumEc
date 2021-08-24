@@ -14,13 +14,44 @@
     $height: 54px;
     width: 32%;
     height: $height;
-    text-align: center;
     line-height: $height;
+    padding-left: 30px;
 
     font-family: $font-light;
     font-size: 22px;
     color: white;
     background: #7B8A78;
+  }
+}
+
+.major-detail-contents {
+  width: 100%;
+  height: 1039px;
+  margin: 25px 0;
+  padding: 58px 70px;
+  border: 1px solid #5C5C5C;
+
+  font-family: $font-medium;
+  font-size: 22px;
+}
+
+.major-detail-button-wrap {
+  @include flex-box;
+  justify-content: flex-end;
+  margin-bottom: 658px;
+
+  .major-detail-button {
+    $height: 32px;
+    width: 77px;
+    height: $height;
+    text-align: center;
+    line-height: $height;
+
+    margin-left: 10px;
+    font-family: $font-light;
+    font-size: 18px;
+    color: white;
+    background: #1D333E;
   }
 }
 
