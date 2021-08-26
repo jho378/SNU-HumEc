@@ -1,0 +1,19 @@
+{% extends 'major/major_base.html' %}
+{% load sass_tags %}
+
+{% block major-extra-head %}
+<link rel="stylesheet" href="{% sass_src 'css/major_create.scss' %}"/>
+{% endblock %}
+
+{% block major-name %}
+{{ major }}
+{% endblock %}
+
+{% block major-content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <input class="major-create-title" type="text" name="title" placeholder="제목을 입력해 주세요.">
+    <textarea class="major-create-contents" type="text" name="contents" placeholder="내용을 입력해 주세요."></textarea>
+    <input class="major-create-submit" type="submit" value="등록"/>
+</form>
+{% endblock %}
