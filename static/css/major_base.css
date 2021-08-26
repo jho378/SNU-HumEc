@@ -16,4 +16,6 @@ a { text-decoration: none; color: inherit; }
 
 .major-contents-wrap .major-name { padding-bottom: 23px; border-bottom: 19px solid #566B64; font-family: "YeolrinGothic-Medium"; font-size: 55px; }
 
+.active { font-family: "YeolrinGothic-Bold"; color: red; }
+
 /*# sourceMappingURL=major_base.css.map */

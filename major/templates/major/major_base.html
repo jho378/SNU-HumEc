@@ -2,7 +2,7 @@
 {% load sass_tags %}
 
 {% block extra-head %}
-<link rel="stylesheet" href="{% sass_src 'css/major_base.scss' %}?1"/>
+<link rel="stylesheet" href="{% sass_src 'css/major_base.scss' %}?2"/>
 {% block major-extra-head %}
 {% endblock %}
 {% endblock %}
@@ -13,16 +13,16 @@
 
 <div class="major-wrap">
     <div class="major-menu">
-        <div class="major-menu-item">
+        <div class="major-menu-item" onclick="handleFoodClick()">
             <a href="{% url 'major:food_list' %}">식품영양학과</a>
         </div>
-        <div class="major-menu-item">
+        <div id="menu-clothing" class="major-menu-item">
             <a href="{% url 'major:clothing_list' %}">의류학과</a>
         </div>
-        <div class="major-menu-item">
+        <div id="menu-consumer" class="major-menu-item">
             <a href="{% url 'major:consumer_list' %}">소비자학과</a>
         </div>
-        <div class="major-menu-item">
+        <div id="menu-child" class="major-menu-item">
             <a href="{% url 'major:child_list' %}">아동가족학과</a>
         </div>
     </div>
@@ -38,4 +38,6 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="/static/js/major_base.js"></script>
 {% endblock %}
