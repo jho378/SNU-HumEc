@@ -20,6 +20,7 @@ APPEND_APPS = [
     "core",
     "major",
     "council",
+    "auth",
 ]
 
 INSTALLED_APPS = [
