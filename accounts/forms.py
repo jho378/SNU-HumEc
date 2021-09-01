@@ -3,6 +3,10 @@ from . import models
 
 
 class SignupForm(forms.ModelForm):
+    # 필드명 오버라이
+    username = forms.CharField(label="이름")
+    phone = forms.CharField(label="전화번호")
+    snu_mail = forms.CharField(label="ID(마이스누 메일)")
     password1 = forms.CharField(label="비밀번호 확인", widget=forms.PasswordInput)
 
     class Meta:
