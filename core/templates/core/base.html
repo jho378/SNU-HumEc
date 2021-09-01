@@ -43,10 +43,10 @@
         </div>
         <div class="footer-contents">
             <div class="footer-contents-title">과별 게시판</div>
-            <div class="footer-contents-item">소비자학과</div>
-            <div class="footer-contents-item">아동가족학과</div>
-            <div class="footer-contents-item">식품영양학과</div>
-            <div class="footer-contents-item">의류학과</div>
+            <div class="footer-contents-item"><a href="{% url 'major:consumer_list' %}">소비자학과</a></div>
+            <div class="footer-contents-item"><a href="{% url 'major:child_list' %}">아동가족학과</a></div>
+            <div class="footer-contents-item"><a href="{% url 'major:food_list' %}">식품영양학과</a></div>
+            <div class="footer-contents-item"><a href="{% url 'major:clothing_list' %}">의류학과</a></div>
         </div>
         <div class="footer-contents">
             <div class="footer-contents-title">공지사항</div>
