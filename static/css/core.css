@@ -2,6 +2,12 @@
 
 a { text-decoration: none; color: inherit; }
 
+input:focus { outline: none; }
+
+textarea { resize: none; }
+
+textarea:focus { outline: none; }
+
 @font-face { font-family: 'YeolrinGothic-Bold'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Bold.woff") format("woff"); font-weight: normal; font-style: normal; }
 
 @font-face { font-family: 'YeolrinGothic-Medium'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Medium.woff") format("woff"); font-weight: normal; font-style: normal; }

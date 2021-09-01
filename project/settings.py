@@ -19,6 +19,7 @@ ALLOWED_HOSTS = []
 APPEND_APPS = [
     "core",
     "major",
+    "accounts",
 ]
 
 INSTALLED_APPS = [
