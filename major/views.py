@@ -45,9 +45,12 @@ def child_list(request):
 def major_detail(request, pk):
     queryset = MajorPost.objects.get(pk=pk)
     major = get_major(queryset.major)
+    is_post_user = True if queryset.user == request.user else False  # 작성자 확인
+
     ctx = {
         "major": major,
         "post": queryset,
+        "is_post_user": is_post_user,
     }
     return render(request, "major/major_detail.html", ctx)
 

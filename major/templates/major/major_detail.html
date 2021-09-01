@@ -20,8 +20,11 @@
     <div class="major-detail-summary-unit">조회수: {{ post.hits }}</div>
 </div>
 <div class="major-detail-contents">{{ post.contents }}</div>
+
+{% if is_post_user %}
 <div class="major-detail-button-wrap">
     <a href=""><div class="major-detail-button">수정</div></a>
     <a href=""><div class="major-detail-button">삭제</div></a>
 </div>
+{% endif %}
 {% endblock %}
