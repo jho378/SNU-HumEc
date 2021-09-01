@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from major.models import MajorPost
+from .forms import MajorPostForm
 
 
 def get_major(major_en):
@@ -52,33 +53,41 @@ def major_detail(request, pk):
 
 
 # create
-def major_create(request, major_name):
-    title = request.POST["title"]
-    contents = request.POST["contents"]
-    # user = request.POST["user"]
-    # image = request.POST["image"]
-    # file = request.POST["file"]
-
-    post = MajorPost.objects.create(
-        title=title,
-        contents=contents,
-        # user=user,
-        # image=image,
-        # file=file,
-        major=major_name,
-        pin=False
-    )
-    return redirect("major_detail", post.pk)
+# def major_create(request, major_name):
+#     title = request.POST["title"]
+#     contents = request.POST["contents"]
+#     # user = request.POST["user"].get_name()
+#     # image = request.POST["image"]
+#     # file = request.POST["file"]
+#
+#     post = MajorPost.objects.create(
+#         title=title,
+#         contents=contents,
+#         # user=user,
+#         # image=image,
+#         # file=file,
+#         major=major_name,
+#         pin=False
+#     )
+#     return redirect("major_detail", post.pk)
 
 
 def food_create(request):
     MAJOR = "food"
     if request.method == "POST":
-        major_create(request, MAJOR)
-        return False
+        form = MajorPostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.major = MAJOR
+            post.save()
+            return redirect("major:food_list")
+    else:
+        form = MajorPostForm()
 
     major = get_major(MAJOR)
     ctx = {
+        "form": form,
         "major": major,
     }
     return render(request, "major/major_create.html", ctx)
@@ -87,11 +96,19 @@ def food_create(request):
 def clothing_create(request):
     MAJOR = "clothing"
     if request.method == "POST":
-        major_create(request, MAJOR)
-        return False
+        form = MajorPostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.major = MAJOR
+            post.save()
+            return redirect("major:clothing_list")
+    else:
+        form = MajorPostForm()
 
     major = get_major(MAJOR)
     ctx = {
+        "form": form,
         "major": major,
     }
     return render(request, "major/major_create.html", ctx)
@@ -100,11 +117,19 @@ def clothing_create(request):
 def consumer_create(request):
     MAJOR = "consumer"
     if request.method == "POST":
-        major_create(request, MAJOR)
-        return False
+        form = MajorPostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.major = MAJOR
+            post.save()
+            return redirect("major:consumer_list")
+    else:
+        form = MajorPostForm()
 
     major = get_major(MAJOR)
     ctx = {
+        "form": form,
         "major": major,
     }
     return render(request, "major/major_create.html", ctx)
@@ -113,11 +138,19 @@ def consumer_create(request):
 def child_create(request):
     MAJOR = "child"
     if request.method == "POST":
-        major_create(request, MAJOR)
-        return False
+        form = MajorPostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.major = MAJOR
+            post.save()
+            return redirect("major:child_list")
+    else:
+        form = MajorPostForm()
 
     major = get_major(MAJOR)
     ctx = {
+        "form": form,
         "major": major,
     }
     return render(request, "major/major_create.html", ctx)

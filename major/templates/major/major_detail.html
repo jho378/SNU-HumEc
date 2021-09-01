@@ -15,7 +15,7 @@
 
 <div class="major-detail-title">{{ post.title }}</div>
 <div class="major-detail-summary">
-    <div class="major-detail-summary-unit">작성자: {{ post.user }}</div>
+    <div class="major-detail-summary-unit">작성자: {{ post.user.name }}</div>
     <div class="major-detail-summary-unit">작성일: {{ post.created_at|date:"Y-m-d" }}</div>
     <div class="major-detail-summary-unit">조회수: {{ post.hits }}</div>
 </div>
