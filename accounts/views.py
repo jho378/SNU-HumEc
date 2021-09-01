@@ -30,7 +30,7 @@ def signin(request):  # django 내장 login 함수와 이름 겹치지 않게
         password = request.POST["password"]
         user = authenticate(username=username, password=password)
 
-        if user is not None:
+        if user:
             login(request, user)
             return redirect("core:core")
 
