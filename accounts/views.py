@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import SignupForm
+from .forms import SignupForm, LoginForm
+from django.contrib.auth import login, authenticate
 
 
 def signup(request):
@@ -20,3 +21,27 @@ def signup(request):
 
 def done(request):
     return render(request, "accounts/done.html")
+
+
+def signin(request):  # django 내장 login 함수와 이름 겹치지 않게
+    if request.method == "POST":
+        form = LoginForm(request.POST)
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect("core:core")
+
+        ctx = {
+            "form": form,
+            "error": "아이디나 비밀번호가 일치하지 않습니다.",
+        }
+        return render(request, "accounts/login.html", ctx)
+    else:
+        form = LoginForm()
+    ctx = {
+        "form": form
+    }
+    return render(request, "accounts/login.html", ctx)

@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% load sass_tags %}
+
+{% block extra-head %}
+{% endblock %}
+
+{% block content %}
+<div class="accounts-title">회원가입</div>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="login-error">{{ error }}</div>
+    <input type="submit" value="로그인" />
+</form>
+{% endblock %}

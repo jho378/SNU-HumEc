@@ -23,3 +23,12 @@ class SignupForm(forms.ModelForm):
         if pw != pw1:
             raise forms.ValidationError("*비밀번호가 일치하지 않습니다")
         return pw1
+
+
+class LoginForm(forms.ModelForm):
+    # 필드명 오버라이드
+    username = forms.CharField(label="ID")
+
+    class Meta:
+        model = models.User
+        fields = ("username", "password")
