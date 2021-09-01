@@ -3,7 +3,7 @@ from . import models
 
 
 class SignupForm(forms.ModelForm):
-    # 필드명 오버라이
+    # 필드명 오버라이드
     username = forms.CharField(label="이름")
     phone = forms.CharField(label="전화번호")
     snu_mail = forms.CharField(label="ID(마이스누 메일)")

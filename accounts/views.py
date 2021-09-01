@@ -10,8 +10,8 @@ def signup(request):
             user.set_password(form.cleaned_data["password"])  # 비밀번호 암호화
             user.save()
             return redirect("accounts:done")
-
-    form = SignupForm()
+    else:
+        form = SignupForm()
     ctx = {
         "form": form
     }
