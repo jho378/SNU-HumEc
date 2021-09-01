@@ -4,14 +4,14 @@ from . import models
 
 class SignupForm(forms.ModelForm):
     # 필드명 오버라이드
-    username = forms.CharField(label="이름")
+    name = forms.CharField(label="이름")
     phone = forms.CharField(label="전화번호")
-    snu_mail = forms.CharField(label="ID(마이스누 메일)")
+    username = forms.CharField(label="ID(마이스누 메일)")
     password1 = forms.CharField(label="비밀번호 확인", widget=forms.PasswordInput)
 
     class Meta:
         model = models.User
-        fields = ("username", "phone", "snu_mail", "password", "password1")
+        fields = ("name", "phone", "username", "password", "password1")
         widgets = {
             "password": forms.PasswordInput(),
         }

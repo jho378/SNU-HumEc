@@ -20,5 +20,5 @@ AbstractUser 구성 [AbstractBaseUser 상속]
 # 기존 AbstractUser 모델에 새로운 필드 추가
 class User(AbstractUser):
     phone = models.CharField(max_length=20)
-    snu_mail = models.CharField(max_length=100)
+    name = models.CharField(max_length=50, default="user")
 
