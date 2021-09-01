@@ -13,7 +13,7 @@ class SignupForm(forms.ModelForm):
         model = models.User
         fields = ("name", "phone", "username", "password", "password1")
         widgets = {
-            "password": forms.PasswordInput(),
+            "password": forms.PasswordInput(),  # 비밀번호 입력 시 안 보이게
         }
 
     def clean_password1(self):
@@ -32,3 +32,6 @@ class LoginForm(forms.ModelForm):
     class Meta:
         model = models.User
         fields = ("username", "password")
+        widgets = {
+            "password": forms.PasswordInput(),
+        }

@@ -1,10 +1,10 @@
 from django.db import models
-from accounts.models import User
+from django.conf import settings
 
 
 class MajorPost(models.Model):
     major = models.CharField(max_length=50)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)  # accounts.models.User 연결
     pin = models.BooleanField()
 
     title = models.CharField(max_length=100)
