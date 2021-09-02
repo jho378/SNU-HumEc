@@ -24,8 +24,12 @@
 
 {% if is_post_user %}
 <div class="post-detail-button-wrap">
-    <a href=""><div class="post-detail-button">수정</div></a>
-    <a href=""><div class="post-detail-button">삭제</div></a>
+    <div class="post-detail-button"><a href="{% url 'major:major_update' post.pk %}">수정</a></div>
+    <form action="{% url 'major:major_delete' post.pk %}" method="post">
+        {% csrf_token %}
+        <!--input submit 기본 테두리 제거-->
+        <input class="post-detail-button" value="삭제" type="submit" style="border: none">
+    </form>
 </div>
 {% endif %}
 {% endblock %}

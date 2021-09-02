@@ -175,3 +175,13 @@ def major_update(request, pk):
         "major": major,
     }
     return render(request, "major/major_create.html", ctx)
+
+
+# delete
+def major_delete(request, pk):
+    queryset = MajorPost.objects.get(pk=pk)
+
+    if request.method == "POST":
+        queryset.delete()
+        return redirect(f"major:{queryset.major}_list")
+    return redirect("major:major_detail", pk)
