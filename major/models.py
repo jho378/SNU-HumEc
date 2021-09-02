@@ -9,7 +9,7 @@ class MajorPost(models.Model):
 
     title = models.CharField(max_length=100)
     contents = models.TextField()
-    image = models.ImageField(blank=True, upload_to="major/image")
+    image = models.ImageField(blank=True, upload_to="major/image")  # settings.py MEDIA_ROOT 이하
     file = models.FileField(blank=True, upload_to="major/file")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
