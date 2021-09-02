@@ -20,6 +20,7 @@ APPEND_APPS = [
     "core",
     "major",
     "accounts",
+    "notice",
 ]
 
 INSTALLED_APPS = [

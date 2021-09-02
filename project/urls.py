@@ -8,5 +8,6 @@ urlpatterns = [
     path("core/", include("core.urls")),
     path("major/", include("major.urls")),
     path("accounts/", include("accounts.urls")),
+    path("notice/", include("notice.urls")),
     path("", lambda req: redirect("core:core")),
 ]
