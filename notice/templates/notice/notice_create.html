@@ -1,0 +1,13 @@
+{% extends 'notice/notice_base.html' %}
+{% load sass_tags %}
+
+{% block notice-extra-head %}
+{% endblock %}
+
+{% block notice-content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="게시하기"/>
+</form>
+{% endblock %}

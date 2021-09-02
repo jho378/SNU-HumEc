@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Notice
+from .forms import NoticeForm
 
 
 def notice_list(request):
@@ -18,3 +19,19 @@ def notice_detail(request, pk):
         "is_post_user": is_post_user,
     }
     return render(request, "notice/notice_detail.html", ctx)
+
+
+def notice_create(request):
+    if request.method == "POST":
+        form = NoticeForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save()
+            return redirect("notice:notice_list")
+    else:
+        form = NoticeForm()
+    ctx = {
+        "form": form,
+    }
+    return render(request, "notice/notice_create.html", ctx)
