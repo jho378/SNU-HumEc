@@ -25,7 +25,7 @@
         <a href="{% url 'major:major_detail' post.pk %}">{{ post.title }}</a>
     </div>
     <div class="post-list-date">{{ post.created_at|date:"Y-m-d" }}</div>
-    <div class="post-list-user">{{ post.user }}</div>
+    <div class="post-list-user">{{ post.user.name }}</div>
 </div>
 {% endfor %}
 {% endblock %}
