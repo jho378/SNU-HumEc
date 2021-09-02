@@ -20,7 +20,7 @@
 
 {% if is_post_user %}
 <div class="post-detail-button-wrap">
-    <a href=""><div class="post-detail-button">수정</div></a>
+    <div class="post-detail-button"><a href="{% url 'notice:notice_update' post.pk %}">수정</a></div>
     <a href=""><div class="post-detail-button">삭제</div></a>
 </div>
 {% endif %}

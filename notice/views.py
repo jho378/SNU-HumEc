@@ -35,3 +35,18 @@ def notice_create(request):
         "form": form,
     }
     return render(request, "notice/notice_create.html", ctx)
+
+
+def notice_update(request, pk):
+    queryset = Notice.objects.get(pk=pk)
+    if request.method == "POST":
+        form = NoticeForm(request.POST, instance=queryset)
+        if form.is_valid():
+            form.save()
+            return redirect("notice:notice_detail", pk)
+    else:
+        form = NoticeForm(instance=queryset)
+    ctx = {
+        "form": form,
+    }
+    return render(request, "notice/notice_create.html", ctx)
