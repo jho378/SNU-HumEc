@@ -21,7 +21,10 @@
 {% if is_post_user %}
 <div class="post-detail-button-wrap">
     <div class="post-detail-button"><a href="{% url 'notice:notice_update' post.pk %}">수정</a></div>
-    <a href=""><div class="post-detail-button">삭제</div></a>
+    <form action="{% url 'notice:notice_delete' post.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" class="post-detail-button" value="삭제" style="border: none">
+    </form>
 </div>
 {% endif %}
 {% endblock %}

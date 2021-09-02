@@ -50,3 +50,13 @@ def notice_update(request, pk):
         "form": form,
     }
     return render(request, "notice/notice_create.html", ctx)
+
+
+def notice_delete(request, pk):
+    queryset = Notice.objects.get(pk=pk)
+
+    if request.method == "POST":
+        queryset.delete()
+        return redirect("notice:notice_list")
+    return redirect("notice:notice_detail", pk)
+
