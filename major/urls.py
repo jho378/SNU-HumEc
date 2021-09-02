@@ -13,4 +13,5 @@ urlpatterns = [
     path("create/clothing/", views.clothing_create, name="clothing_create"),
     path("create/consumer/", views.consumer_create, name="consumer_create"),
     path("create/child/", views.child_create, name="child_create"),
+    path("update/<int:pk>/", views.major_update, name="major_update"),
 ]

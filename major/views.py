@@ -56,25 +56,6 @@ def major_detail(request, pk):
 
 
 # create
-# def major_create(request, major_name):
-#     title = request.POST["title"]
-#     contents = request.POST["contents"]
-#     # user = request.POST["user"].get_name()
-#     # image = request.POST["image"]
-#     # file = request.POST["file"]
-#
-#     post = MajorPost.objects.create(
-#         title=title,
-#         contents=contents,
-#         # user=user,
-#         # image=image,
-#         # file=file,
-#         major=major_name,
-#         pin=False
-#     )
-#     return redirect("major_detail", post.pk)
-
-
 def food_create(request):
     MAJOR = "food"
     if request.method == "POST":
@@ -152,6 +133,43 @@ def child_create(request):
         form = MajorPostForm()
 
     major = get_major(MAJOR)
+    ctx = {
+        "form": form,
+        "major": major,
+    }
+    return render(request, "major/major_create.html", ctx)
+
+# def major_create(request, major_name):
+#     title = request.POST["title"]
+#     contents = request.POST["contents"]
+#     user = request.POST["user"].get_name()
+#     image = request.POST["image"]
+#     file = request.POST["file"]
+#
+#     post = MajorPost.objects.create(
+#         title=title,
+#         contents=contents,
+#         user=user,
+#         image=image,
+#         file=file,
+#         major=major_name,
+#         pin=False
+#     )
+#     return redirect("major_detail", post.pk)
+
+
+# update
+def major_update(request, pk):
+    queryset = MajorPost.objects.get(pk=pk)
+    major = get_major(queryset.major)
+
+    if request.method == "POST":
+        form = MajorPostForm(request.POST, instance=queryset)
+        if form.is_valid():
+            form.save()
+            return redirect("major:major_detail", pk)
+    else:
+        form = MajorPostForm(instance=queryset)
     ctx = {
         "form": form,
         "major": major,
