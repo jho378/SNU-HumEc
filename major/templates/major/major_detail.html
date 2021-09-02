@@ -13,18 +13,19 @@
 <!--해당 페이지 접근 시 조회수 업데이트-->
 <div style="display: none">{{ post.click }}</div>
 
-<div class="major-detail-title">{{ post.title }}</div>
-<div class="major-detail-summary">
-    <div class="major-detail-summary-unit">작성자: {{ post.user.name }}</div>
-    <div class="major-detail-summary-unit">작성일: {{ post.created_at|date:"Y-m-d" }}</div>
-    <div class="major-detail-summary-unit">조회수: {{ post.hits }}</div>
+<!--class 이름 통일해서 common 스타일 파일 사용-->
+<div class="post-detail-title">{{ post.title }}</div>
+<div class="post-detail-summary">
+    <div class="post-detail-summary-unit">작성자: {{ post.user.name }}</div>
+    <div class="post-detail-summary-unit">작성일: {{ post.created_at|date:"Y-m-d" }}</div>
+    <div class="post-detail-summary-unit">조회수: {{ post.hits }}</div>
 </div>
-<div class="major-detail-contents">{{ post.contents }}</div>
+<div class="post-detail-contents">{{ post.contents }}</div>
 
 {% if is_post_user %}
-<div class="major-detail-button-wrap">
-    <a href=""><div class="major-detail-button">수정</div></a>
-    <a href=""><div class="major-detail-button">삭제</div></a>
+<div class="post-detail-button-wrap">
+    <a href=""><div class="post-detail-button">수정</div></a>
+    <a href=""><div class="post-detail-button">삭제</div></a>
 </div>
 {% endif %}
 {% endblock %}

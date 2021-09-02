@@ -2,7 +2,7 @@
 {% load sass_tags %}
 
 {% block extra-head %}
-<link rel="stylesheet" href="{% sass_src 'css/major_base.scss' %}?2"/>
+<link rel="stylesheet" href="{% sass_src 'css/major_base.scss' %}"/>
 {% block major-extra-head %}
 {% endblock %}
 {% endblock %}
@@ -11,28 +11,29 @@
 <!--base.scss에 style-->
 <div class="title-banner">과별 게시판</div>
 
-<div class="major-wrap">
-    <div class="major-menu">
-        <div class="major-menu-item" onclick="handleFoodClick()">
+<!--class 이름 통일해서 common 스타일 파일 사용-->
+<div class="post-wrap">
+    <div class="post-menu">
+        <div class="post-menu-item" onclick="handleFoodClick()">
             <a href="{% url 'major:food_list' %}">식품영양학과</a>
         </div>
-        <div id="menu-clothing" class="major-menu-item">
+        <div id="menu-clothing" class="post-menu-item">
             <a href="{% url 'major:clothing_list' %}">의류학과</a>
         </div>
-        <div id="menu-consumer" class="major-menu-item">
+        <div id="menu-consumer" class="post-menu-item">
             <a href="{% url 'major:consumer_list' %}">소비자학과</a>
         </div>
-        <div id="menu-child" class="major-menu-item">
+        <div id="menu-child" class="post-menu-item">
             <a href="{% url 'major:child_list' %}">아동가족학과</a>
         </div>
     </div>
 
-    <div class="major-contents-wrap">
-        <div class="major-name">
+    <div class="post-contents-wrap">
+        <div class="post-name">
             {% block major-name %}
             {% endblock %}
         </div>
-        <div class="major-contents">
+        <div class="post-contents">
             {% block major-content %}
             {% endblock %}
         </div>

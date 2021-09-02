@@ -14,13 +14,13 @@ textarea:focus { outline: none; }
 
 @font-face { font-family: 'YeolrinGothic-Light'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Light.woff") format("woff"); font-weight: normal; font-style: normal; }
 
-.major-wrap { display: flex; justify-content: space-between; align-items: center; align-items: flex-start; margin-top: 110px; padding: 0 185px 0 79px; }
+.post-wrap { display: flex; justify-content: space-between; align-items: center; align-items: flex-start; margin-top: 110px; padding: 0 185px 0 79px; }
 
-.major-menu-item { margin-bottom: 24px; font-family: "YeolrinGothic-Medium"; font-size: 23px; }
+.post-menu-item { margin-bottom: 24px; font-family: "YeolrinGothic-Medium"; font-size: 23px; }
 
-.major-contents-wrap { width: 900px; }
+.post-contents-wrap { width: 900px; }
 
-.major-contents-wrap .major-name { padding-bottom: 23px; border-bottom: 19px solid #566B64; font-family: "YeolrinGothic-Medium"; font-size: 55px; }
+.post-contents-wrap .post-name { padding-bottom: 23px; border-bottom: 19px solid #566B64; font-family: "YeolrinGothic-Medium"; font-size: 55px; }
 
 .active { font-family: "YeolrinGothic-Bold"; color: red; }
 
