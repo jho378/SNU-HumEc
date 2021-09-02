@@ -24,4 +24,8 @@ textarea:focus { outline: none; }
 
 .active { font-family: "YeolrinGothic-Bold"; color: red; }
 
-/*# sourceMappingURL=major_base.css.map */
+.notice-wrap { margin: 0 300px; }
+
+.notice-name { margin-top: 88px; }
+
+/*# sourceMappingURL=notice_base.css.map */

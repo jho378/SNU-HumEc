@@ -15,13 +15,13 @@
 
 .post-contents-wrap {
   width: 900px; // 원래는 1319px, 사이즈 넘쳐서 임의로 조정
+}
 
-  .post-name {
-    padding-bottom: 23px;
-    border-bottom: 19px solid #566B64;
-    font-family: $font-medium;
-    font-size: 55px;
-  }
+.post-name {
+  padding-bottom: 23px;
+  border-bottom: 19px solid #566B64;
+  font-family: $font-medium;
+  font-size: 55px;
 }
 
 .active {

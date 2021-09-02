@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% load sass_tags %}
+
+{% block extra-head %}
+<link rel="stylesheet" href="{% sass_src 'css/notice_base.scss' %}"/>
+{% block notice-extra-head %}
+{% endblock %}
+{% endblock %}
+
+{% block content %}
+<!--base.scss에 style-->
+<div class="title-banner">공지사항</div>
+
+<div class="post-name notice-wrap notice-name">공지사항</div>
+<div class="post-contents notice-wrap">
+    {% block notice-content %}
+    {% endblock %}
+</div>
+{% endblock %}
