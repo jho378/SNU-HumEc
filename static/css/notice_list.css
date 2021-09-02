@@ -24,7 +24,7 @@ textarea:focus { outline: none; }
 
 .post-contents-col .col-user { width: 25%; }
 
-.post-list { display: flex; justify-content: space-between; align-items: center; width: 900px; margin-bottom: 11px; padding-bottom: 10px; border-bottom: 2px solid #BABABA; font-size: 25px; text-align: center; }
+.post-list { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 11px; padding-bottom: 10px; border-bottom: 2px solid #BABABA; font-size: 25px; text-align: center; }
 
 .post-list .post-list-title { width: 50%; }
 
