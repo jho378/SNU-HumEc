@@ -21,6 +21,7 @@ APPEND_APPS = [
     "major",
     "accounts",
     "notice",
+    "complaint",
 ]
 
 INSTALLED_APPS = [
