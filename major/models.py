@@ -16,7 +16,7 @@ class MajorPost(models.Model):
     hits = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return self.title
+        return f"{self.pk}: {self.title}"
 
     @property
     def click(self):  # 조회수
