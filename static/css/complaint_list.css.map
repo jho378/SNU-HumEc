@@ -1,8 +1,8 @@
 {
 	"version": 3,
-	"file": "major_list.css",
+	"file": "complaint_list.css",
 	"sources": [
-		"major_list.scss",
+		"complaint_list.scss",
 		"../../../common/static/css/post_list.scss",
 		"../../../common/static/css/init.scss"
 	],

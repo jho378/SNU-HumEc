@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% load sass_tags %}
+
+{% block extra-head %}
+<link rel="stylesheet" href="{% sass_src 'css/complaint_base.scss' %}"/>
+{% block complaint-extra-head %}
+{% endblock %}
+{% endblock %}
+
+{% block content %}
+<!--base.scss에 style-->
+<div class="title-banner">민원/건의함</div>
+
+<div class="post-name complaint-wrap complaint-name">민원/건의함</div>
+<div class="post-contents complaint-wrap">
+    {% block complaint-content %}
+    {% endblock %}
+</div>
+{% endblock %}

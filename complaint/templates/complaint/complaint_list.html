@@ -1,0 +1,29 @@
+{% extends 'complaint/complaint_base.html' %}
+{% load sass_tags %}
+
+{% block complaint-extra-head %}
+<link rel="stylesheet" href="{% sass_src 'css/complaint_list.scss' %}"/>
+{% endblock %}
+
+{% block complaint-content %}
+<div class="post-contents-col">
+    <div class="col col-title">제목</div>
+    <div class="col col-date">게시일</div>
+    <div class="col col-user">작성자</div>
+</div>
+
+{% for post in posts %}
+<div class="post-list">
+    <div class="post-list-title">
+        <i class="fas fa-lock"></i>
+        {% if login_user == post.user %}
+        <a href="{% url 'complaint:complaint_detail' post.pk %}">{{ post.title }}</a>
+        {% else %}
+        {{ post.title }}
+        {% endif %}
+    </div>
+    <div class="post-list-date">{{ post.created_at|date:"Y-m-d" }}</div>
+    <div class="post-list-user">익명</div>
+</div>
+{% endfor %}
+{% endblock %}
