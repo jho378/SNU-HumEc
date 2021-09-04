@@ -1,0 +1,22 @@
+{% extends 'complaint/complaint_base.html' %}
+{% load sass_tags %}
+
+{% block complaint-extra-head %}
+<link rel="stylesheet" href="{% sass_src 'css/complaint_detail.scss' %}"/>
+{% endblock %}
+
+{% block complaint-content %}
+<!--해당 페이지 접근 시 조회수 업데이트-->
+<div style="display: none">{{ post.click }}</div>
+
+<div class="complaint-title">{{ post.title }}</div>
+<div class="complaint-summary">
+    <div class="complaint-summary-unit">작성자: 익명</div>
+    <div class="complaint-summary-unit">작성일: {{ post.created_at|date:"Y-m-d h:i" }}</div>
+    <div class="complaint-summary-unit">조회수: {{ post.hits }}</div>
+</div>
+<div class="complaint-contents">
+    <div class="file">{{ post.file }}</div>
+    {{ post.contents }}
+</div>
+{% endblock %}
