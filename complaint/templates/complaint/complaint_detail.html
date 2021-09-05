@@ -19,4 +19,27 @@
     <div class="file">{{ post.file }}</div>
     {{ post.contents }}
 </div>
+
+{% for comment in comments %}
+<div class="complaint-comment">
+    <div class="complaint-comment-header">
+        <div class="complaint-comment-summary">
+            <div class="complaint-comment-user">{{ comment.user.name }}</div>
+            <div>{{ comment.created_at|date:"Y-m-d" }}</div>
+            <div>{{ comment.created_at|date:"h:i" }}</div>
+        </div>
+        <div class="complaint-comment-button-wrap">
+            <div class="complaint-comment-button">수정</div>
+            <div class="complaint-comment-button">삭제</div>
+        </div>
+    </div>
+    <div class="complaint-comment-contents">{{ comment.contents }}</div>
+</div>
+{% endfor %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" name="contents" placeholder="댓글 작성"/>
+    <input type="submit" value="등록">
+</form>
 {% endblock %}
