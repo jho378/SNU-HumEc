@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
-from django.urls import reverse
+from django.http import JsonResponse
 from .models import Complaint, ComplaintComment
+import json
 
 
 def complaint_list(request):
@@ -34,3 +34,13 @@ def complaint_detail(request, pk):
         "login_user": login_user,
     }
     return render(request, "complaint/complaint_detail.html", ctx)
+
+
+def complaint_comment_update(request):
+    json_object = json.loads(request.body)
+    comment = ComplaintComment.objects.filter(pk=json_object.get("id"))
+    ctx = {"result": "FAIL"}
+    if comment:
+        comment.update(contents=json_object.get("contents"))  # update queryset에서만 동작 (get 대신 filter 사용)
+        ctx = {"result": "SUCCESS"}
+    return JsonResponse(ctx)
