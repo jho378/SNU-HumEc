@@ -28,18 +28,20 @@
             <div>{{ comment.created_at|date:"Y-m-d" }}</div>
             <div>{{ comment.created_at|date:"h:i" }}</div>
         </div>
+        {% if comment.user == login_user %}
         <div class="complaint-comment-button-wrap">
             <div class="complaint-comment-button">수정</div>
             <div class="complaint-comment-button">삭제</div>
         </div>
+        {% endif %}
     </div>
-    <div class="complaint-comment-contents">{{ comment.contents }}</div>
+    <input class="complaint-comment-contents" value="{{ comment.contents }}" readonly/>
 </div>
 {% endfor %}
 
 <form action="" method="POST">
     {% csrf_token %}
     <input type="text" name="contents" placeholder="댓글 작성"/>
-    <input type="submit" value="등록">
+    <input type="submit" value="등록"/>
 </form>
 {% endblock %}
