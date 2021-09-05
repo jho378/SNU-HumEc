@@ -37,11 +37,9 @@
                    value="수정"/>
             <input type="submit" class="complaint-comment-button delete-{{ comment.id }}" value="삭제"/>
             <!--수정 버튼 클릭 시 생성되는 버튼-->
-            <input class="complaint-comment-button cancel-{{ comment.id }}"
-                   onclick="commentUpdateCancel('{{ comment.id }}')"
-                   type="submit"
-                   value="취소"
-                   style="display: none"/>
+            <a href="{% url 'complaint:complaint_detail' post.pk %}"
+               class="complaint-comment-button cancel-{{ comment.id }}"
+               style="display: none">취소</a>
             <input class="complaint-comment-button submit-{{ comment.id }}"
                    onclick="commentUpdateSubmit('{{ comment.id }}')"
                    type="submit"
@@ -105,11 +103,11 @@
             type: "POST",
             headers: {"X-CSRFTOKEN": "{{ csrf_token }}"},
             data: JSON.stringify(param),
+
             success: function (data) {
                 console.log(data);
-
                 if (data.result === "SUCCESS") {
-                    handleSuccess(id)
+                    handleSuccess(id);
                 }
             },
             error: function () {
