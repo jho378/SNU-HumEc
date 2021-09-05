@@ -44,3 +44,13 @@ def complaint_comment_update(request):
         comment.update(contents=json_object.get("contents"))  # update queryset에서만 동작 (get 대신 filter 사용)
         ctx = {"result": "SUCCESS"}
     return JsonResponse(ctx)
+
+
+def complaint_comment_delete(request):
+    json_object = json.loads(request.body)
+    comment = ComplaintComment.objects.filter(pk=json_object.get("id"))
+    ctx = {"result": "FAIL"}
+    if comment:
+        comment.delete()
+        ctx = {"result": "SUCCESS"}
+    return JsonResponse(ctx)
