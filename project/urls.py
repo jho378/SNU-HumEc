@@ -10,5 +10,6 @@ urlpatterns = [
     path("accounts/", include("accounts.urls")),
     path("notice/", include("notice.urls")),
     path("complaint/", include("complaint.urls")),
+    path("community/", include("community.urls")),
     path("", lambda req: redirect("core:core")),
 ]
