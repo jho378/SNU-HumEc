@@ -15,12 +15,12 @@
             <div class="core-list-title">공지사항</div>
             <a class="core-list-plus" href="{% url 'notice:notice_list' %}">더보기<span>▶</span></a>
         </div>
-        <!--데이터 받아서 for 문-->
+        {% for post in notice_posts %}
         <div class="core-list-item">
-            <div class="title">첫 번째 제목</div>
-            <div class="summary">2021-08-04<span>작성자</span></div>
+            <a class="title" href="{% url 'notice:notice_detail' post.pk %}">{{ post.title }}</a>
+            <div class="summary">{{ post.created_at|date:"Y-m-d"}}<span>{{ post.user.name }}</span></div>
         </div>
-        <!--for 문 끝-->
+        {% endfor %}
     </div>
     <div id="core-major">
         <a href="{% url 'major:consumer_list' %}"><div id="core-major-consumer" class="core-major-item">소비자학과</div></a>
@@ -46,13 +46,14 @@
     <div id="core-market" class="core-list">
         <div class="core-list-header">
             <div class="core-list-title">장터 게시판</div>
-            <div class="core-list-plus">더보기<span>▶</span></div>
+            <a class="core-list-plus" href="{% url 'community:market_list' %}">더보기<span>▶</span></a>
         </div>
-        <!--데이터 받아서 for 문-->
+        {% for post in market_posts %}
         <div class="core-list-item">
-            <div class="title"><span>구매</span>첫 번째 제목</div>
-            <div class="summary">2021-08-04<span>작성자</span></div>
+            <a class="title" href=""><span>{{ post.market_tag }}</span>{{ post.title }}</a>
+            <div class="summary">{{ post.created_at|date:"Y-m-d" }}<span>{{ post.user.name }}</span></div>
         </div>
+        {% endfor %}
         <!--for 문 끝-->
     </div>
 </div>
