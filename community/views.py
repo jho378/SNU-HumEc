@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import CommunityPost
+from django.shortcuts import render, redirect
+from .models import CommunityPost, CommunityComment
 
 
 def get_board(board_en):
@@ -39,12 +39,25 @@ def study_list(request):
     return render(request, "community/community_list.html", ctx)
 
 
-def market_detail(request, pk):
+def community_detail(request, pk):
     queryset = CommunityPost.objects.get(pk=pk)
+    comments = CommunityComment.objects.filter(post=queryset)
+    board = get_board(queryset.board)
     login_user = request.user
+    is_post_user = True if queryset.user == login_user else False
+
+    if request.method == "POST":
+        post = queryset
+        contents = request.POST["contents"]
+        user = request.user
+        CommunityComment.objects.create(post=post, contents=contents, user=user)
+        return redirect("community:community_detail", pk)
 
     ctx = {
+        "board": board,
         "post": queryset,
+        "comments": comments,
         "login_user": login_user,
+        "is_post_user": is_post_user,
     }
-    return render(request, "community/market_detail.html", ctx)
+    return render(request, "community/community_detail.html", ctx)

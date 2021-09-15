@@ -3,7 +3,7 @@
 
 {% block extra-head %}
 <link rel="stylesheet" href="{% sass_src 'css/community_base.scss' %}"/>
-{% block major-extra-head %}
+{% block community-extra-head %}
 {% endblock %}
 {% endblock %}
 
@@ -30,15 +30,13 @@
 
     <div class="post-contents-wrap">
         <div class="post-name">
-            {% block major-name %}
+            {% block community-name %}
             {% endblock %}
         </div>
         <div class="post-contents">
-            {% block major-content %}
+            {% block community-content %}
             {% endblock %}
         </div>
     </div>
 </div>
-
-<script type="text/javascript" src="/static/js/major_base.js"></script>
 {% endblock %}
