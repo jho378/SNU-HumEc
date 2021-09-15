@@ -11,5 +11,7 @@ urlpatterns = [
     path("<int:pk>/", views.community_detail, name="community_detail"),
     path("create/market/", views.market_create, name="market_create"),
     path("create/promotion/", views.promotion_create, name="promotion_create"),
+    path("create/free/", views.free_create, name="free_create"),
+    path("create/study/", views.study_create, name="study_create"),
     path("delete/<int:pk>/", views.community_delete, name="community_delete"),
 ]

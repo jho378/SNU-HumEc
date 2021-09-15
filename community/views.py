@@ -106,6 +106,48 @@ def promotion_create(request):
     return render(request, "community/community_create.html", ctx)
 
 
+def free_create(request):
+    BOARD = "free"
+    if request.method == "POST":
+        form = CommunityPostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.board = BOARD
+            post.save()
+            return redirect("community:free_list")
+    else:
+        form = CommunityPostForm()
+
+    board = get_board(BOARD)
+    ctx = {
+        "form": form,
+        "board": board,
+    }
+    return render(request, "community/community_create.html", ctx)
+
+
+def study_create(request):
+    BOARD = "study"
+    if request.method == "POST":
+        form = CommunityPostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.board = BOARD
+            post.save()
+            return redirect("community:study_list")
+    else:
+        form = CommunityPostForm()
+
+    board = get_board(BOARD)
+    ctx = {
+        "form": form,
+        "board": board,
+    }
+    return render(request, "community/community_create.html", ctx)
+
+
 def community_delete(request, pk):
     queryset = CommunityPost.objects.get(pk=pk)
 
