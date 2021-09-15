@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% load sass_tags %}
+
+{% block extra-head %}
+<link rel="stylesheet" href="{% sass_src 'css/community_base.scss' %}"/>
+{% block major-extra-head %}
+{% endblock %}
+{% endblock %}
+
+{% block content %}
+<!--base.scss에 style-->
+<div class="title-banner">커뮤니티</div>
+
+<!--class 이름 통일해서 common 스타일 파일 사용-->
+<div class="post-wrap">
+    <div class="post-menu">
+        <div class="post-menu-item">
+            <a href="{% url 'community:market_list' %}">장터 게시판</a>
+        </div>
+        <div id="menu-promotion" class="post-menu-item">
+            <a href="{% url 'community:promotion_list' %}">홍보 게시판</a>
+        </div>
+        <div id="menu-free" class="post-menu-item">
+            <a href="{% url 'community:free_list' %}">자유 게시판</a>
+        </div>
+        <div id="menu-study" class="post-menu-item">
+            <a href="{% url 'community:study_list' %}">스터디/강의 게시판</a>
+        </div>
+    </div>
+
+    <div class="post-contents-wrap">
+        <div class="post-name">
+            {% block major-name %}
+            {% endblock %}
+        </div>
+        <div class="post-contents">
+            {% block major-content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/static/js/major_base.js"></script>
+{% endblock %}

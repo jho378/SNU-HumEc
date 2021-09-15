@@ -1,1 +1,31 @@
-커뮤니티 리스트다!
+{% extends 'community/community_base.html' %}
+{% load sass_tags %}
+
+{% block major-extra-head %}
+<link rel="stylesheet" href="{% sass_src 'css/community_list.scss' %}?3"/>
+{% endblock %}
+
+<!--학과명-->
+{% block major-name %}
+{{ board }}
+{% endblock %}
+
+<!--글 목록-->
+{% block major-content %}
+<!--class 이름 통일해서 common 스타일 파일 사용-->
+<div class="post-contents-col">
+    <div class="col col-title">제목</div>
+    <div class="col col-date">게시일</div>
+    <div class="col col-user">작성자</div>
+</div>
+
+{% for post in posts %}
+<div class="post-list">
+    <div class="post-list-title">
+        <a href="{% url 'major:major_detail' post.pk %}">{{ post.title }}</a>
+    </div>
+    <div class="post-list-date">{{ post.created_at|date:"Y-m-d" }}</div>
+    <div class="post-list-user">{{ post.user.name }}</div>
+</div>
+{% endfor %}
+{% endblock %}
