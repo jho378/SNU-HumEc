@@ -22,3 +22,14 @@ class CommunityPost(models.Model):
     def click(self):  # 조회수
         self.hits += 1
         self.save()
+
+
+class CommunityComment(models.Model):
+    post = models.ForeignKey(CommunityPost, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    contents = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.pk}: {self.contents}"
