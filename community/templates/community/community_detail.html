@@ -24,7 +24,13 @@
 
 {% if is_post_user %}
 <div class="post-detail-button-wrap">
-    <div class="post-detail-button"><a href="">수정</a></div>
+    <div class="post-detail-button">
+        {% if post.board == "market" %}
+        <a href="{% url 'community:market_update' post.pk %}">수정</a>
+        {% else %}
+        <a href="{% url 'community:community_update' post.pk %}">수정</a>
+        {% endif %}
+    </div>
     <form action="{% url 'community:community_delete' post.pk %}" method="post">
         {% csrf_token %}
         <!--input submit 기본 테두리 제거-->

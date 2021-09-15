@@ -148,6 +148,42 @@ def study_create(request):
     return render(request, "community/community_create.html", ctx)
 
 
+def market_update(request, pk):
+    queryset = CommunityPost.objects.get(pk=pk)
+    board = get_board(queryset.board)
+
+    if request.method == "POST":
+        form = MarketPostForm(request.POST, instance=queryset)
+        if form.is_valid():
+            form.save()
+            return redirect("community:community_detail", pk)
+    else:
+        form = MarketPostForm(instance=queryset)
+    ctx = {
+        "form": form,
+        "board": board,
+    }
+    return render(request, "community/market_create.html", ctx)
+
+
+def community_update(request, pk):
+    queryset = CommunityPost.objects.get(pk=pk)
+    board = get_board(queryset.board)
+
+    if request.method == "POST":
+        form = CommunityPostForm(request.POST, instance=queryset)
+        if form.is_valid():
+            form.save()
+            return redirect("community:community_detail", pk)
+    else:
+        form = CommunityPostForm(instance=queryset)
+    ctx = {
+        "form": form,
+        "board": board,
+    }
+    return render(request, "community/community_create.html", ctx)
+
+
 def community_delete(request, pk):
     queryset = CommunityPost.objects.get(pk=pk)
 
