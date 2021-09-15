@@ -13,7 +13,7 @@ class CommunityPost(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     hits = models.PositiveIntegerField(default=0)
 
-    market_tag = models.CharField(max_length=50, default=None)
+    market_tag = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
         return f"{self.pk}: {self.title}"
