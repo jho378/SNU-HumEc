@@ -9,4 +9,5 @@ urlpatterns = [
     path("free/", views.free_list, name="free_list"),
     path("study/", views.study_list, name="study_list"),
     path("<int:pk>/", views.community_detail, name="community_detail"),
+    path("delete/<int:pk>/", views.community_delete, name="community_delete"),
 ]

@@ -25,7 +25,7 @@
 {% if is_post_user %}
 <div class="post-detail-button-wrap">
     <div class="post-detail-button"><a href="">수정</a></div>
-    <form action="" method="post">
+    <form action="{% url 'community:community_delete' post.pk %}" method="post">
         {% csrf_token %}
         <!--input submit 기본 테두리 제거-->
         <input class="post-detail-button" value="삭제" type="submit" style="border: none">

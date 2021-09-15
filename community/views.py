@@ -61,3 +61,12 @@ def community_detail(request, pk):
         "is_post_user": is_post_user,
     }
     return render(request, "community/community_detail.html", ctx)
+
+
+def community_delete(request, pk):
+    queryset = CommunityPost.objects.get(pk=pk)
+
+    if request.method == "POST":
+        queryset.delete()
+        return redirect(f"community:{queryset.board}_list")
+    return redirect("community:community_detail", pk)
