@@ -37,3 +37,14 @@ def free_list(request):
 def study_list(request):
     ctx = get_list_ctx("study", "스터디/강의 게시판")
     return render(request, "community/community_list.html", ctx)
+
+
+def market_detail(request, pk):
+    queryset = CommunityPost.objects.get(pk=pk)
+    login_user = request.user
+
+    ctx = {
+        "post": queryset,
+        "login_user": login_user,
+    }
+    return render(request, "community/market_detail.html", ctx)
