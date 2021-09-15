@@ -1,0 +1,18 @@
+{% extends 'community/community_base.html' %}
+{% load sass_tags %}
+
+{% block community-extra-head %}
+<link rel="stylesheet" href="{% sass_src 'css/market_create.scss' %}"/>
+{% endblock %}
+
+{% block community-name %}
+{{ board }}
+{% endblock %}
+
+{% block community-content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="등록">
+</form>
+{% endblock %}
