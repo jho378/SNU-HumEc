@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import CommunityPost, CommunityComment
-from .forms import CommunityPostForm
+from .forms import MarketPostForm, CommunityPostForm
 
 
 def get_board(board_en):
@@ -67,13 +67,34 @@ def community_detail(request, pk):
 def market_create(request):
     BOARD = "market"
     if request.method == "POST":
-        form = CommunityPostForm(request.POST)
+        form = MarketPostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.user = request.user
             post.board = BOARD
             post.save()
             return redirect("community:market_list")
+    else:
+        form = MarketPostForm()
+
+    board = get_board(BOARD)
+    ctx = {
+        "form": form,
+        "board": board,
+    }
+    return render(request, "community/market_create.html", ctx)
+
+
+def promotion_create(request):
+    BOARD = "promotion"
+    if request.method == "POST":
+        form = CommunityPostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.board = BOARD
+            post.save()
+            return redirect("community:promotion_list")
     else:
         form = CommunityPostForm()
 
@@ -82,7 +103,7 @@ def market_create(request):
         "form": form,
         "board": board,
     }
-    return render(request, "community/market_create.html", ctx)
+    return render(request, "community/community_create.html", ctx)
 
 
 def community_delete(request, pk):
