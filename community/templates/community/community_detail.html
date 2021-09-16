@@ -3,6 +3,7 @@
 
 {% block community-extra-head %}
 <link rel="stylesheet" href="{% sass_src 'css/community_detail.scss' %}"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock %}
 
 {% block community-name %}
@@ -40,7 +41,40 @@
 {% endif %}
 
 {% for comment in comments %}
-<!--여기에 댓글 넣기-->
+<div class="community-comment comment-{{ comment.id }}">
+    <div class="community-comment-header">
+        <div class="community-comment-summary">
+            <div class="community-comment-user">{{ comment.user.name }}</div>
+            <div>{{ comment.created_at|date:"Y-m-d" }}</div>
+            <div>{{ comment.created_at|date:"h:i" }}</div>
+        </div>
+        {% if comment.user == login_user %}
+<!--        <div class="complaint-comment-button-wrap">-->
+<!--            <input class="complaint-comment-button update-{{ comment.id }}"-->
+<!--                   onclick="commentUpdate('{{ comment.id }}')"-->
+<!--                   type="submit"-->
+<!--                   value="수정"/>-->
+<!--            <input class="complaint-comment-button delete-{{ comment.id }}"-->
+<!--                   onclick="commentDelete('{{ comment.id }}')"-->
+<!--                   value="삭제"-->
+<!--                   type="submit"/>-->
+<!--            &lt;!&ndash;수정 버튼 클릭 시 생성되는 버튼&ndash;&gt;-->
+<!--            <a href="{% url 'complaint:complaint_detail' post.pk %}"-->
+<!--               class="complaint-comment-button cancel-{{ comment.id }}"-->
+<!--               style="display: none">취소</a>-->
+<!--            <input class="complaint-comment-button submit-{{ comment.id }}"-->
+<!--                   onclick="commentUpdateSubmit('{{ comment.id }}')"-->
+<!--                   type="submit"-->
+<!--                   value="수정"-->
+<!--                   style="display: none"/>-->
+<!--        </div>-->
+        {% endif %}
+    </div>
+    <input type="text"
+           class="complaint-comment-contents contents-{{ comment.id }}"
+           value="{{ comment.contents }}"
+           readonly/>
+</div>
 {% endfor %}
 
 <form action="" method="POST">
