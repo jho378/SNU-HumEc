@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "notice_create.css",
+	"sources": [
+		"notice_create.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,KAAK,CAAC,KAAK,CAAC,EACV,MAAM,EAAE,OAAO,GAChB"
+}
