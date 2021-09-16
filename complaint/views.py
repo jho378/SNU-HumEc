@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from .models import Complaint, ComplaintComment
+from .forms import ComplaintForm
 import json
 
 
@@ -34,6 +35,22 @@ def complaint_detail(request, pk):
         "login_user": login_user,
     }
     return render(request, "complaint/complaint_detail.html", ctx)
+
+
+def complaint_create(request):
+    if request.method == "POST":
+        form = ComplaintForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save()
+            return redirect("complaint:complaint_list")
+    else:
+        form = ComplaintForm()
+    ctx = {
+        "form": form,
+    }
+    return render(request, "complaint/complaint_create.html", ctx)
 
 
 def complaint_comment_update(request):

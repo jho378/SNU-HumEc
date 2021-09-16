@@ -1,0 +1,14 @@
+{% extends 'complaint/complaint_base.html' %}
+{% load sass_tags %}
+
+{% block complaint-extra-head %}
+<link rel="stylesheet" href="{% sass_src 'css/complaint_create.scss' %}"/>
+{% endblock %}
+
+{% block complaint-content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="게시하기">
+</form>
+{% endblock %}
