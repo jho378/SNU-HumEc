@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from .models import CommunityPost, CommunityComment
 from .forms import MarketPostForm, CommunityPostForm
+import json
 
 
 def get_board(board_en):
@@ -191,3 +193,23 @@ def community_delete(request, pk):
         queryset.delete()
         return redirect(f"community:{queryset.board}_list")
     return redirect("community:community_detail", pk)
+
+
+def community_comment_update(request):
+    json_object = json.loads(request.body)
+    comment = CommunityComment.objects.filter(pk=json_object.get("id"))
+    ctx = {"result": "FAIL"}
+    if comment:
+        comment.update(contents=json_object.get("contents"))  # update queryset에서만 동작 (get 대신 filter 사용)
+        ctx = {"result": "SUCCESS"}
+    return JsonResponse(ctx)
+
+
+def community_comment_delete(request):
+    json_object = json.loads(request.body)
+    comment = CommunityComment.objects.filter(pk=json_object.get("id"))
+    ctx = {"result": "FAIL"}
+    if comment:
+        comment.delete()
+        ctx = {"result": "SUCCESS"}
+    return JsonResponse(ctx)

@@ -16,4 +16,6 @@ urlpatterns = [
     path("update/market/<int:pk>/", views.market_update, name="market_update"),
     path("update/<int:pk>/", views.community_update, name="community_update"),
     path("delete/<int:pk>/", views.community_delete, name="community_delete"),
+    path("comment-update/", views.community_comment_update, name="community_comment_update"),
+    path("comment-delete/", views.community_comment_delete, name="community_comment_delete"),
 ]
