@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>서울대학교 생활과학대학 학생회</title>
     <script src="https://kit.fontawesome.com/5658349e28.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% sass_src 'css/base.scss' %}?1"/>
+    <link rel="stylesheet" href="{% sass_src 'css/base.scss' %}?2"/>
 
     {% block extra-head %}
     {% endblock %}
@@ -19,11 +19,35 @@
         </div>
     </a>
     <div class="header-list">
-        <div class="header-list-item">학생회</div>
-        <div class="header-list-item">과별 게시판</div>
+        <div class="header-list-item">
+            학생회
+            <div class="dropdown">
+                <div class="dropdown-item">학생회 소개</div>
+                <div class="dropdown-item">회칙/세칙</div>
+                <div class="dropdown-item">생운위, 전학대회</div>
+                <div class="dropdown-item">집행부 회의록</div>
+            </div>
+        </div>
+        <div class="header-list-item">
+            과별 게시판
+            <div class="dropdown">
+                <div class="dropdown-item"><a href="{% url 'major:consumer_list' %}">소비자학과</a></div>
+                <div class="dropdown-item"><a href="{% url 'major:child_list' %}">아동가족학과</a></div>
+                <div class="dropdown-item"><a href="{% url 'major:food_list' %}">식품영양학과</a></div>
+                <div class="dropdown-item"><a href="{% url 'major:clothing_list' %}">의류학과</a></div>
+            </div>
+        </div>
         <div class="header-list-item"><a href="{% url 'notice:notice_list' %}">공지사항</a></div>
         <div class="header-list-item"><a href="{% url 'complaint:complaint_list' %}">민원/건의사항</a></div>
-        <div class="header-list-item">커뮤니티</div>
+        <div class="header-list-item">
+            커뮤니티
+            <div class="dropdown">
+                <div class="dropdown-item"><a href="{% url 'community:market_list' %}">장터 게시판</a></div>
+                <div class="dropdown-item"><a href="{% url 'community:promotion_list' %}">홍보 게시판</a></div>
+                <div class="dropdown-item"><a href="{% url 'community:free_list' %}">자유 게시판</a></div>
+                <div class="dropdown-item"><a href="{% url 'community:study_list' %}">스터디/강의 게시판</a></div>
+            </div>
+        </div>
     </div>
     <div class="header-list">
         <i class="fas fa-search"></i>

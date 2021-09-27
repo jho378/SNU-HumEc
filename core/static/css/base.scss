@@ -16,10 +16,34 @@ header {
 
     .header-list-item {
       margin: 0 35px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:hover div.dropdown {
+        display: block;
+      }
     }
 
     .header-user-item {
       margin-left: 47px;
+    }
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+
+    .dropdown-item {
+      background: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      color: white;
+      font-family: $font-light;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
