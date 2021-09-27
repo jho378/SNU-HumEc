@@ -56,17 +56,17 @@
             <div class="footer-contents-item"><a href="{% url 'major:clothing_list' %}">의류학과</a></div>
         </div>
         <div class="footer-contents">
-            <div class="footer-contents-title">공지사항</div>
+            <div class="footer-contents-title"><a href="{% url 'notice:notice_list' %}">공지사항</a></div>
         </div>
         <div class="footer-contents">
-            <div class="footer-contents-title">민원/건의함</div>
+            <div class="footer-contents-title"><a href="{% url 'complaint:complaint_list' %}">민원/건의함</a></div>
         </div>
         <div class="footer-contents">
             <div class="footer-contents-title">커뮤니티</div>
-            <div class="footer-contents-item">장터게시판</div>
-            <div class="footer-contents-item">홍보게시판</div>
-            <div class="footer-contents-item">자유게시판</div>
-            <div class="footer-contents-item">스터디 / 강의 게시판</div>
+            <div class="footer-contents-item"><a href="{% url 'community:market_list' %}">장터게시판</a></div>
+            <div class="footer-contents-item"><a href="{% url 'community:promotion_list' %}">홍보게시판</a></div>
+            <div class="footer-contents-item"><a href="{% url 'community:free_list' %}">자유게시판</a></div>
+            <div class="footer-contents-item"><a href="{% url 'community:study_list' %}">스터디 / 강의 게시판</a></div>
         </div>
     </div>
     <div class="footer-belt">
