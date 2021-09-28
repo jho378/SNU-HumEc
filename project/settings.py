@@ -23,6 +23,7 @@ APPEND_APPS = [
     "notice",
     "complaint",
     "community",
+    "council",
 ]
 
 INSTALLED_APPS = [
