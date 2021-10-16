@@ -13,10 +13,12 @@ def get_major(major_en):
 
 # list
 def get_list_ctx(major_en, major_ko):
-    queryset = MajorPost.objects.filter(major=major_en)
+    queryset = MajorPost.objects.filter(major=major_en).filter(pin=False)
+    pin_major = MajorPost.objects.filter(major=major_en).filter(pin=True)
     ctx = {
         "major": major_ko,
         "posts": queryset,
+        "pin_posts": pin_major,
     }
     return ctx
 
@@ -62,6 +64,8 @@ def food_create(request):
         form = MajorPostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
+            is_pin = request.POST.getlist("pin")  # form 내 해당하는 name의 value를 list 형태로 받아옴
+            post.pin = True if is_pin else False
             post.user = request.user
             post.major = MAJOR
             post.save()
@@ -83,6 +87,8 @@ def clothing_create(request):
         form = MajorPostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
+            is_pin = request.POST.getlist("pin")  # form 내 해당하는 name의 value를 list 형태로 받아옴
+            post.pin = True if is_pin else False
             post.user = request.user
             post.major = MAJOR
             post.save()
@@ -104,6 +110,8 @@ def consumer_create(request):
         form = MajorPostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
+            is_pin = request.POST.getlist("pin")  # form 내 해당하는 name의 value를 list 형태로 받아옴
+            post.pin = True if is_pin else False
             post.user = request.user
             post.major = MAJOR
             post.save()
@@ -125,6 +133,8 @@ def child_create(request):
         form = MajorPostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
+            is_pin = request.POST.getlist("pin")  # form 내 해당하는 name의 value를 list 형태로 받아옴
+            post.pin = True if is_pin else False
             post.user = request.user
             post.major = MAJOR
             post.save()
@@ -161,17 +171,22 @@ def child_create(request):
 # update
 def major_update(request, pk):
     queryset = MajorPost.objects.get(pk=pk)
+    is_pin = True if queryset.pin else False
     major = get_major(queryset.major)
 
     if request.method == "POST":
         form = MajorPostForm(request.POST, instance=queryset)
         if form.is_valid():
+            post = form.save(commit=False)
+            is_pin = request.POST.getlist("pin")
+            post.pin = True if is_pin else False
             form.save()
             return redirect("major:major_detail", pk)
     else:
         form = MajorPostForm(instance=queryset)
     ctx = {
         "form": form,
+        "is_pin": is_pin,
         "major": major,
     }
     return render(request, "major/major_create.html", ctx)

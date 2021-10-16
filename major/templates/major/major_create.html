@@ -20,6 +20,15 @@
 <form action="" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
+    {% if is_pin %}
+    <label for="pin_checked">
+        <input id="pin_checked" type="checkbox" name="pin" value="PIN" checked>주요공지
+    </label>
+    {% else %}
+    <label for="pin">
+        <input id="pin" type="checkbox" name="pin" value="PIN">주요공지
+    </label>
+    {% endif %}
     <input type="submit" value="등록">
 </form>
 {% endblock %}

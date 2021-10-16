@@ -22,7 +22,7 @@ textarea:focus { outline: none; }
 
 .post-detail-contents { width: 100%; height: 1039px; margin: 25px 0; padding: 58px 70px; border: 1px solid #5C5C5C; font-family: "YeolrinGothic-Medium"; font-size: 22px; }
 
-.post-detail-button-wrap { display: flex; justify-content: space-between; align-items: center; justify-content: flex-end; margin-bottom: 658px; }
+.post-detail-button-wrap { display: flex; justify-content: space-between; align-items: center; justify-content: flex-end; margin-bottom: 100px; }
 
 .post-detail-button-wrap .post-detail-button { width: 77px; height: 32px; text-align: center; line-height: 32px; margin-left: 10px; font-family: "YeolrinGothic-Light"; font-size: 18px; color: white; background: #1D333E; }
 
