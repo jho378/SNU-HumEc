@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% load sass_tags %}
+
+{% block extra-head %}
+<link rel="stylesheet" href="{% sass_src 'css/council_base.scss' %}"/>
+{% block council-extra-head %}
+{% endblock %}
+{% endblock %}
+
+{% block content %}
+<!--base.scss에 style-->
+<div class="title-banner">학생회</div>
+
+<!--class 이름 통일해서 common 스타일 파일 사용-->
+<div class="post-wrap">
+    <div class="post-menu">
+        <div class="post-menu-item">
+            <a href="{% url 'major:food_list' %}">학생회 소개</a>
+        </div>
+        <div id="menu-clothing" class="post-menu-item">
+            <a href="{% url 'major:clothing_list' %}">회칙 / 세칙</a>
+        </div>
+        <div id="menu-consumer" class="post-menu-item">
+            <a href="{% url 'major:consumer_list' %}">생운위 / 전학대회</a>
+        </div>
+        <div id="menu-child" class="post-menu-item">
+            <a href="{% url 'major:child_list' %}">학생회 회의록</a>
+        </div>
+    </div>
+
+    <div class="post-contents-wrap">
+        <div class="post-name">
+            {% block council-name %}
+            {% endblock %}
+        </div>
+        <div class="post-contents">
+            {% block council-content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}

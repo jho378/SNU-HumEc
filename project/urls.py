@@ -11,5 +11,6 @@ urlpatterns = [
     path("notice/", include("notice.urls")),
     path("complaint/", include("complaint.urls")),
     path("community/", include("community.urls")),
+    path("council/", include("council.urls")),
     path("", lambda req: redirect("core:core")),
 ]
