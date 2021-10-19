@@ -22,10 +22,10 @@
         <div class="header-list-item">
             학생회
             <div class="dropdown">
-                <div class="dropdown-item">학생회 소개</div>
-                <div class="dropdown-item">회칙/세칙</div>
-                <div class="dropdown-item">생운위, 전학대회</div>
-                <div class="dropdown-item">집행부 회의록</div>
+                <div class="dropdown-item"><a href="{% url 'council:council_about' %}">학생회 소개</a></div>
+                <div class="dropdown-item"><a href="{% url 'council:council_rule' %}">회칙/세칙</a></div>
+                <div class="dropdown-item"><a href="{% url 'council:council_conference' %}">생운위, 전학대회</a></div>
+                <div class="dropdown-item"><a href="{% url 'council:council_minutes' %}">집행부 회의록</a></div>
             </div>
         </div>
         <div class="header-list-item">
@@ -67,10 +67,10 @@
     <div class="footer-contents-wrap">
         <div class="footer-contents">
             <div class="footer-contents-title">학생회</div>
-            <div class="footer-contents-item">학생회 소개</div>
-            <div class="footer-contents-item">회식 / 세칙</div>
-            <div class="footer-contents-item">생운위 / 전학대회</div>
-            <div class="footer-contents-item">집행부 회의록</div>
+            <div class="footer-contents-item"><a href="{% url 'council:council_about' %}">학생회 소개</a></div>
+            <div class="footer-contents-item"><a href="{% url 'council:council_rule' %}">회식 / 세칙</a></div>
+            <div class="footer-contents-item"><a href="{% url 'council:council_conference' %}">생운위 / 전학대회</a></div>
+            <div class="footer-contents-item"><a href="{% url 'council:council_minutes' %}">집행부 회의록</a></div>
         </div>
         <div class="footer-contents">
             <div class="footer-contents-title">과별 게시판</div>
