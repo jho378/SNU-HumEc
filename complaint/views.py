@@ -6,7 +6,7 @@ import json
 
 
 def complaint_list(request):
-    queryset = Complaint.objects.all()
+    queryset = Complaint.objects.all().order_by("-created_at")
     login_user = request.user
     ctx = {
         "posts": queryset,

@@ -13,8 +13,8 @@ def get_major(major_en):
 
 # list
 def get_list_ctx(major_en, major_ko):
-    queryset = MajorPost.objects.filter(major=major_en).filter(pin=False)
-    pin_major = MajorPost.objects.filter(major=major_en).filter(pin=True)
+    queryset = MajorPost.objects.filter(major=major_en).filter(pin=False).order_by("-created_at")
+    pin_major = MajorPost.objects.filter(major=major_en).filter(pin=True).order_by("-created_at")
     ctx = {
         "major": major_ko,
         "posts": queryset,

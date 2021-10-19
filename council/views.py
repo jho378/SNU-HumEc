@@ -8,8 +8,8 @@ def council_about(request):
 
 
 def council_rule(request):
-    queryset = CouncilPost.objects.filter(council="rule").filter(pin=False)
-    pin_council = CouncilPost.objects.filter(council="rule").filter(pin=True)
+    queryset = CouncilPost.objects.filter(council="rule").filter(pin=False).order_by("-created_at")
+    pin_council = CouncilPost.objects.filter(council="rule").filter(pin=True).order_by("-created_at")
     ctx = {
         "posts": queryset,
         "pin_posts": pin_council,
@@ -19,8 +19,8 @@ def council_rule(request):
 
 
 def council_conference(request):
-    queryset = CouncilPost.objects.filter(council="conference").filter(pin=False)
-    pin_council = CouncilPost.objects.filter(council="conference").filter(pin=True)
+    queryset = CouncilPost.objects.filter(council="conference").filter(pin=False).order_by("-created_at")
+    pin_council = CouncilPost.objects.filter(council="conference").filter(pin=True).order_by("-created_at")
     ctx = {
         "posts": queryset,
         "pin_posts": pin_council,
@@ -30,8 +30,8 @@ def council_conference(request):
 
 
 def council_minutes(request):
-    queryset = CouncilPost.objects.filter(council="minutes").filter(pin=False)
-    pin_council = CouncilPost.objects.filter(council="minutes").filter(pin=True)
+    queryset = CouncilPost.objects.filter(council="minutes").filter(pin=False).order_by("-created_at")
+    pin_council = CouncilPost.objects.filter(council="minutes").filter(pin=True).order_by("-created_at")
     ctx = {
         "posts": queryset,
         "pin_posts": pin_council,

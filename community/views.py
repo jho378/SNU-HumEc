@@ -14,7 +14,7 @@ def get_board(board_en):
 
 
 def get_list_ctx(board_en, board_ko):
-    queryset = CommunityPost.objects.filter(board=board_en)
+    queryset = CommunityPost.objects.filter(board=board_en).order_by("-created_at")
     ctx = {
         "board": board_ko,
         "posts": queryset,

@@ -4,8 +4,8 @@ from .forms import NoticeForm
 
 
 def notice_list(request):
-    queryset = Notice.objects.filter(pin=False)
-    pin_notice = Notice.objects.filter(pin=True)
+    queryset = Notice.objects.filter(pin=False).order_by("-created_at")
+    pin_notice = Notice.objects.filter(pin=True).order_by("-created_at")
     ctx = {
         "posts": queryset,
         "pin_posts": pin_notice,
