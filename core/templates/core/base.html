@@ -19,7 +19,7 @@
         </div>
     </a>
     <div class="header-list">
-        <div class= "header-list-item">
+        <div class= "header-list-item" >
             학생회
             <div class="dropdown">
                 <div class="dropdown-item"><a href="{% url 'council:council_about' %}">학생회 소개</a></div>
@@ -28,7 +28,7 @@
                 <div class="dropdown-item"><a href="{% url 'council:council_minutes' %}">집행부 회의록</a></div>
             </div>
         </div>
-        <div class="header-list-item">
+        <div class="header-list-item" >
             과별 게시판
             <div class="dropdown">
                 <div class="dropdown-item"><a href="{% url 'major:consumer_list' %}">소비자학과</a></div>
@@ -37,9 +37,9 @@
                 <div class="dropdown-item"><a href="{% url 'major:clothing_list' %}">의류학과</a></div>
             </div>
         </div>
-        <div class="header-list-item"><a href="{% url 'notice:notice_list' %}">공지사항</a></div>
-        <div class="header-list-item"><a href="{% url 'complaint:complaint_list' %}">민원/건의사항</a></div>
-        <div class="header-list-item">
+        <a class="header-list-item" href="{% url 'notice:notice_list' %}">공지사항</a>
+        <a class="header-list-item" href="{% url 'complaint:complaint_list' %}">민원/건의사항</a>
+        <div class="header-list-item" >
             커뮤니티
             <div class="dropdown">
                 <div class="dropdown-item"><a href="{% url 'community:market_list' %}">장터 게시판</a></div>
@@ -50,12 +50,12 @@
         </div>
     </div>
     <div class="header-list">
-        <i class="fas fa-search"></i>
+        <i class="fas fa-search" id="search-button"></i>
         {% if user.is_authenticated %}
         <div class="header-user-item"><a href="">마이페이지</a></div>
         {% else %}
-        <div class="header-user-item"><a href="{% url 'accounts:login' %}">로그인</a></div>
-        <div class="header-user-item"><a href="{% url 'accounts:signup' %}">회원가입</a></div>
+        <a class="header-user-item" id="log-in" href="{% url 'accounts:login' %}">로그인</a>
+        <a class="header-user-item" id="sign-up" href="{% url 'accounts:signup' %}">회원가입</a>
         {% endif %}
     </div>
 </header>
