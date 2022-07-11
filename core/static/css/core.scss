@@ -1,4 +1,4 @@
-@import "../../../common/static/css/init";
+@import "../../../common/static/css/init.scss";
 
 $core-line: 3px solid #1D333E;
 $font-size-core: 22px;
@@ -7,8 +7,19 @@ $margin-bottom-core-list: 139px;
 
 #core-banner {
   width: 100%;
-  height: 547px;
+  height: 50vh;
   background: transparent linear-gradient(180deg, #5C90D0 0%, #81B5E7 100%) 0 0 no-repeat padding-box;
+  // margin-bottom: 87px;
+  display : flex;
+  justify-content: space-between;
+}
+#core-banner-text{
+  
+}
+#core-banner-img {
+  //width: 100%;
+  height: 100%;
+  //background: transparent linear-gradient(180deg, #5C90D0 0%, #81B5E7 100%) 0 0 no-repeat padding-box;
   margin-bottom: 87px;
 }
 

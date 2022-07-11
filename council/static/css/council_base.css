@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+textarea:focus {
+  outline: none;
+}
+
+@font-face {
+  font-family: "YeolrinGothic-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "YeolrinGothic-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "YeolrinGothic-Light";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.post-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: flex-start;
+  margin-top: 110px;
+  padding: 0 185px 0 79px;
+}
+
+.post-menu-item {
+  margin-bottom: 24px;
+  font-family: "YeolrinGothic-Medium";
+  font-size: 23px;
+}
+
+.post-contents-wrap {
+  width: 900px;
+}
+
+.post-name {
+  padding-bottom: 23px;
+  border-bottom: 19px solid #566B64;
+  font-family: "YeolrinGothic-Medium";
+  font-size: 55px;
+}
+
+.active {
+  font-family: "YeolrinGothic-Bold";
+  color: red;
+}/*# sourceMappingURL=council_base.css.map */

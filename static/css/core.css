@@ -14,7 +14,9 @@ textarea:focus { outline: none; }
 
 @font-face { font-family: 'YeolrinGothic-Light'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Light.woff") format("woff"); font-weight: normal; font-style: normal; }
 
-#core-banner { width: 100%; height: 547px; background: transparent linear-gradient(180deg, #5C90D0 0%, #81B5E7 100%) 0 0 no-repeat padding-box; margin-bottom: 87px; }
+#core-banner { width: 100%; height: 50vh; background: transparent linear-gradient(180deg, #5C90D0 0%, #81B5E7 100%) 0 0 no-repeat padding-box; display: flex; justify-content: space-between; }
+
+#core-banner-img { height: 100%; margin-bottom: 87px; }
 
 .core-content-box { display: flex; justify-content: space-between; align-items: center; align-items: flex-start; padding: 0 142px; }
 

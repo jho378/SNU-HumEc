@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+textarea:focus {
+  outline: none;
+}
+
+@font-face {
+  font-family: "YeolrinGothic-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "YeolrinGothic-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "YeolrinGothic-Light";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.post-contents-col {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5px;
+  margin: 157px 0 11px;
+  border-bottom: 6px solid #344D51;
+}
+.post-contents-col .col {
+  font-family: "YeolrinGothic-Bold";
+  font-size: 36px;
+  text-align: center;
+}
+.post-contents-col .col-title {
+  width: 50%;
+}
+.post-contents-col .col-date {
+  width: 25%;
+}
+.post-contents-col .col-user {
+  width: 25%;
+}
+
+.post-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 11px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #BABABA;
+  font-size: 25px;
+  text-align: center;
+}
+.post-list .post-list-title {
+  width: 50%;
+  text-align: left;
+  margin-left: 20px;
+}
+.post-list .post-list-date {
+  width: 25%;
+}
+.post-list .post-list-user {
+  width: 25%;
+}/*# sourceMappingURL=council_list.css.map */
