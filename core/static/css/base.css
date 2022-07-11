@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+textarea:focus {
+  outline: none;
+}
+
+@font-face {
+  font-family: "YeolrinGothic-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "YeolrinGothic-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "YeolrinGothic-Light";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinGothic-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 99px;
+  padding: 0 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1607843137);
+  white-space: nowrap;
+}
+header .header-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+  font-family: "YeolrinGothic-Medium";
+}
+header .header-list .header-list-item {
+  margin: 0 35px;
+}
+header .header-list .header-list-item:hover {
+  cursor: pointer;
+}
+header .header-list .header-list-item:hover div.dropdown {
+  display: block;
+}
+header .header-list .header-user-item {
+  margin-left: 47px;
+}
+header .dropdown {
+  display: none;
+  position: absolute;
+}
+header .dropdown .dropdown-item {
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  color: white;
+  font-family: "YeolrinGothic-Light";
+}
+header .dropdown .dropdown-item:hover {
+  cursor: pointer;
+}
+
+footer .footer-contents-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 508px;
+  padding: 90px 167px;
+  background: #E9E9D0;
+}
+footer .footer-contents-wrap .footer-contents {
+  text-align: center;
+}
+footer .footer-contents-wrap .footer-contents-title {
+  font-size: 28px;
+  font-family: "YeolrinGothic-Bold";
+  margin-bottom: 74px;
+}
+footer .footer-contents-wrap .footer-contents-item {
+  font-size: 22px;
+  font-family: "YeolrinGothic-Medium";
+  margin-bottom: 31px;
+}
+footer .footer-belt {
+  height: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 18px;
+  font-family: "YeolrinGothic-Light";
+  color: #E9E9D0;
+  background: #566B64;
+}
+footer .footer-belt span {
+  margin: 0 22px;
+}
+
+.title-banner {
+  height: 150px;
+  margin-top: 50px;
+  padding-left: 79px;
+  line-height: 150px;
+  background: #1D333E;
+  font-family: "YeolrinGothic-Bold";
+  font-size: 28px;
+  color: white;
+}/*# sourceMappingURL=base.css.map */
